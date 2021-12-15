@@ -199,8 +199,71 @@
 </ul>
 <h6 id="note-this-is-technically-a-lie-in-actuality-indexjs-reads-indexscss-as-well-as-the-react-files-making-it-the-only-entryway-for-all-files-bundled-in-the-src-directory"><em>*Note: This is technically a lie. In actuality, <strong>index.js</strong>, reads <strong>index.scss</strong> as well as the React files, making it the only entryway for all files bundled in the <code>src/</code> directory.</em></h6>
 <h2 id="components-directory">Components Directory</h2>
+<pre><code class="language-yml">├── components/
+│   ├── Basics/
+│       ├── Colors.scss
+│       └── Titles.scss
+│   ├── Buttons/
+│       ├── Buttons.js
+│       └── Buttons.scss
+│   ├── Cards/
+│       ├── Cards.js
+│       └── Cards.scss
+│   └── &lt;Components&gt;/
+</code></pre>
+<p><em><p style="text-align: center;">A closer look at a theoretical expansion of the components directory</p></em></p>
+<p>The components directory contains our website components. Each directory in here represents a different class of components, such as <code>Buttons/</code>* or <code>Cards/</code>*. Within these directories are the files necessary that creates these components. Likewise, the special <code>Basics/</code> directory contains small css classes that are reused, but not, technically, components, such as text-size or text-colors.</p>
+<h6 id="note-these-files-are-capitalized-to-follow-react-convention-for-components-when-making-new-components-please-make-sure-to-follow-this-convention-this-convention-is-in-place-to-help-react-differentiate-between-modules-vs-other-types-of-imports"><em>*Note: These files are capitalized to follow React convention for components. When making new components, please make sure to follow this convention. This convention is in place to help React differentiate between modules vs other types of imports.</em></h6>
 <h2 id="webpack-configurations">Webpack Configurations</h2>
-<h3 id="why-do-we-separate-babel-from-webpack">Why do we separate Babel from Webpack?</h3></div>
+<pre><code class="language-javascript">...
+
+module.exports = {
+    mode: 'development',
+    entry: {
+        index: &quot;./frontend/src/index.js&quot;
+    },
+    output: {
+        clean: {
+            keep: '.gitkeep'
+        },
+        filename: '[name].[contenthash].js',
+        path: path.resolve(__dirname, 'frontend/static/frontend'),
+    },
+    devtool: 'inline-source-map',
+    module: {
+        rules: ...
+    },
+    optimization: {
+        moduleIds: 'deterministic',
+        runtimeChunk: 'single',
+        splitChunks: ...
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: '../../templates/frontend/index.html',
+            template: '/frontend/src/templates/index.html',
+        }),
+    ],
+    watchOptions: {
+        ignored: /node_modules/,
+    },
+}
+</code></pre>
+<p><em><p style="text-align: center;">webpack.config.js (truncated)</p></em></p>
+<p>Our <code>webpack.config.js</code> file is one of the most important files to understanding how our frontend architecture comes together. Therefore, this section is dedicated to the settings that we have set for this file. Note that we do not explain all the settings, as some can be found and easily deduced from webpack's <a href="https://webpack.js.org/configuration/">configuration</a> and <a href="https://webpack.js.org/guides/">guides</a> documentation.</p>
+<ul>
+<li><strong>entry:</strong> the file that is ultimately read by webpack to bundle everything together. This file, <code>index.js</code> imports all dependencies and files that makes up our product. Note that <a href="https://webpack.js.org/guides/entry-advanced/">advanced multiple entry</a> is possible, should we ever need it.</li>
+<li><strong>output:</strong> contains configurations for the files that are generated in the <code>static/</code> directory</li>
+<li><strong>output &gt; clean &gt; keep:</strong> clean is usually used to clear away old files before generating new ones (file names are variable to force browser css/js recacheing). However, keep notes files that should not be removed*.</li>
+<li><strong>output &gt; filename:</strong> this configures the name of the generated js files. [name] is simply the name of the file noted in the <em>entry</em> configuration, and [contenthash] is a randomly generated string, which forces browser recacheing.</li>
+<li><strong>output &gt; path:</strong> the directory to place the generated file. This directory is the one that Django, by default, detects its static files.</li>
+<li><strong>optimization:</strong> this contains a catch-all for various ways to enhance either development or deployment. For more on our current configuration, read <a href="https://webpack.js.org/guides/caching/">this guide</a>.</li>
+<li><strong>plugins &gt; HtmlWebpackPlugin:</strong> this plugin enables us to dynamically generate templates with the correct <code>&lt;script&gt;</code> and <code>&lt;styles&gt;</code> path by reading the <em>template</em> and outputing it with the path noted by <em>filename</em>. This output path follows Django's default template directory structure.</li>
+<li><strong>watchOptions &gt; ignored:</strong> configures files to ignore when regenerating watched files.</li>
+</ul>
+<h6 id="note-the-kept-gitkeep-file-is-there-to-give-an-empty-file-for-git-to-preserve-the-otherwise-empty-directory-when-pushed-onto-github-as-you-might-have-guessed-git-does-not-push-empty-directories"><em>*Note: The kept <code>.gitkeep</code> file is there to give an empty file for git to preserve the otherwise empty directory when pushed onto GitHub. As you might have guessed, git does not push empty directories.</em></h6>
+<h3 id="why-do-we-separate-babel-from-webpack">Why do we separate Babel from Webpack?</h3>
+<p>If you have explored documentation from Webpack, you might learn that the <em>babel-loader</em> in <strong>module &gt; rules</strong> can accept the settings noted in <code>.babelrc</code>. The reason why we separate these settings into another file is because Webpack is not, in theory, the only application that makes use of these settings. Although we have no other apps that makes use of <code>.babelrc</code> at the moment, this can change in the future. Therefore, this separation of files is a form of future proofing.</p></div>
             </div>
         </div>
 
