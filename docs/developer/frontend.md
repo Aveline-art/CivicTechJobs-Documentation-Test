@@ -80,5 +80,70 @@ The files that should be manipulated by developers are housed within the `src/` 
 
 ## Webpack Configurations
 
+```javascript
+const path = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+    mode: 'development',
+    entry: {
+        index: "./frontend/src/index.js"
+    },
+    output: {
+        clean: {
+            keep: '.gitkeep'
+        },
+        filename: '[name].[contenthash].js',
+        path: path.resolve(__dirname, 'frontend/static/frontend'),
+    },
+    devtool: 'inline-source-map',
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                }
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "sass-loader",
+                ],
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+        ]
+    },
+    optimization: {
+        moduleIds: 'deterministic',
+        runtimeChunk: 'single',
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all',
+                },
+            },
+        },
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: '../../templates/frontend/index.html',
+            template: '/frontend/src/templates/index.html',
+        }),
+    ],
+    watchOptions: {
+        ignored: /node_modules/,
+    },
+}
+```
+
 ### Why do we separate Babel from Webpack?
 
