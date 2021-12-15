@@ -16,4 +16,5 @@ repo_url: https://github.com/Aveline-art/CivicTechJobs-Documentation/
 repo_name: GitHub
 theme:
   name: mkdocs
+  navigation_depth: 3
   locale: en
