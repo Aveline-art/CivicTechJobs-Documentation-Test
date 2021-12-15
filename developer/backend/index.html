@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://example.com/developer/backend/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Backend Architecture - Marshmallow Generator</title>
+        <title>Backend Architecture - CivicTechJobs Docs</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -21,9 +21,9 @@
     </head>
 
     <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="../..">Marshmallow Generator</a>
+                <a class="navbar-brand" href="../..">CivicTechJobs Docs</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -34,18 +34,19 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href="../.." class="nav-link">Home</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../../about/" class="nav-link">About</a>
+                                <a href="../.." class="nav-link">Joining the Team</a>
                             </li>
                             <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Developers <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Roles <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
   <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Architecture</a>
+    <a href="#" class="dropdown-item">Web Developer</a>
     <ul class="dropdown-menu">
+            
+<li>
+    <a href="https://github.com/hackforla/CivicTechJobs/blob/main/README.md" class="dropdown-item">CONTRIBUTING.md</a>
+</li>
             
 <li>
     <a href="../architecture/" class="dropdown-item">Architecture Summary</a>
@@ -58,8 +59,51 @@
 <li>
     <a href="../frontend/" class="dropdown-item">Frontend Architecture</a>
 </li>
+            
+<li>
+    <a href="../github/" class="dropdown-item">GitHub Architecture</a>
+</li>
     </ul>
   </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Product Manager</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../about/" class="dropdown-item">Placeholder</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">UI Designer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../about/" class="dropdown-item">Placeholder</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">UX Researcher</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../about/" class="dropdown-item">Placeholder</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Resources <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="https://google.com" class="dropdown-item">Google</a>
+</li>
                                 </ul>
                             </li>
                         </ul>
@@ -100,12 +144,91 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#backend-architecture" class="nav-link">Backend Architecture</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#summary" class="nav-link">Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#overview-of-directories-and-files" class="nav-link">Overview of Directories and Files</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#docker" class="nav-link">Docker</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#django-app-files" class="nav-link">Django App Files</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-</div>
+<h1 id="backend-architecture">Backend Architecture</h1>
+<pre><code class="language-yml">├── .github/
+│   └── ISSUE_TEMPLATE/
+├── config/    # Backend
+├── docker/    # Backend
+├── frontend/    # Backend
+│   ├── migrations/    # Backend
+│   ├── src/
+│       ├── assets/
+│       ├── components/
+│       ├── pages/
+│       └── templates/
+│   ├── static/
+│       └── frontend/
+│   └── templates/
+│       └── frontend/
+├── server/    # Backend
+│   └── migrations/    # Backend
+└── &lt;loose files&gt;    # Backend
+</code></pre>
+<p><em><p style="text-align: center;">Overall project structure</p></em></p>
+<pre><code class="language-yml">├── config/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── docker/
+│   ├── django
+│   └── webpack
+├── frontend/
+│   ├── migrations/
+│       └── __init__.py
+│   ├── __init__.py
+│   └── &lt;Django App Files&gt;
+├── server/
+│   ├── migrations/
+│       └── __init__.py
+│   ├── __init__.py
+│   ├── &lt;Django App Files&gt;
+│   └── serializers.py
+├── .dockerignore
+├── docker-compose.yml
+├── manage.py 
+└── requirements.txt 
+</code></pre>
+<p><em><p style="text-align: center;">Backend Architecture</p></em></p>
+<h2 id="summary">Summary</h2>
+<h2 id="overview-of-directories-and-files">Overview of Directories and Files</h2>
+<h2 id="docker">Docker</h2>
+<h2 id="django-app-files">Django App Files</h2>
+<pre><code class="language-yml">├── admin.py
+├── apps.py
+├── models.py
+├── tests.py
+├── urls.py
+└── views.py
+</code></pre>
+<p><em><p style="text-align: center;">Files generated by Django when creating a new Django app</p></em></p></div>
             </div>
         </div>
 
@@ -118,6 +241,7 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
+        <script src="../../js/extra.js" defer></script>
         <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
