@@ -18,7 +18,7 @@
 │       └── frontend/    # Frontend
 ├── server/
 │   └── migrations/
-└── <loose files>
+└── <loose files> # Frontend
 ```
 *<p style="text-align: center;">Overall project structure</p>*
 

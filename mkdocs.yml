@@ -1,20 +1,32 @@
 # Required
-site_name: Marshmallow Generator
+site_name: CivicTechJobs Docs
 site_url: https://example.com/
 
 # Optionals
 edit_uri: ""
+extra_javascript:
+  - js/extra.js
 nav:
-  - Home: index.md
-  - About: about.md
-  - Developers:
-    - Architecture:
+  - Joining the Team: index.md
+  - Roles:
+    - Web Developer:
+      - CONTRIBUTING.md: https://github.com/hackforla/CivicTechJobs/blob/main/README.md
       - Architecture Summary: developer/architecture.md
       - Backend Architecture: developer/backend.md
       - Frontend Architecture: developer/frontend.md
+      - GitHub Architecture: developer/github.md
+    - Product Manager:
+      - Placeholder: about.md
+    - UI Designer:
+      - Placeholder: about.md
+    - UX Researcher:
+      - Placeholder: about.md
+  - Resources:
+    - Google: https://google.com
 repo_url: https://github.com/Aveline-art/CivicTechJobs-Documentation/
 repo_name: GitHub
 theme:
   name: mkdocs
+  nav_style: dark
   navigation_depth: 3
   locale: en
