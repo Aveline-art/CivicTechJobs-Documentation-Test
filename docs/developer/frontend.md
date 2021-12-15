@@ -78,11 +78,29 @@ The files that should be manipulated by developers are housed within the `src/` 
 
 ## Components Directory
 
+```yml
+├── components/
+│   ├── Basics/
+│       ├── Colors.scss
+│       └── Titles.scss
+│   ├── Buttons/
+│       ├── Buttons.js
+│       └── Buttons.scss
+│   ├── Cards/
+│       ├── Cards.js
+│       └── Cards.scss
+│   └── <Components>/
+```
+*<p style="text-align: center;">A closer look at a theoretical expansion of the components directory</p>*
+
+The components directory contains our website components. Each directory in here represents a different class of components, such as `Buttons/`\* or `Cards/`\*. Within these directories are the files necessary that creates these components. Likewise, the special `Basics/` directory contains small css classes that are reused, but not, technically, components, such as text-size or text-colors.
+
+###### *\*Note: These files are capitalized to follow React convention for components. When making new components, please make sure to follow this convention. This convention is in place to help React differentiate between modules vs other types of imports.*
+
 ## Webpack Configurations
 
 ```javascript
-const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+...
 
 module.exports = {
     mode: 'development',
@@ -98,40 +116,12 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader",
-                }
-            },
-            {
-                test: /\.s[ac]ss$/i,
-                use: [
-                    "style-loader",
-                    "css-loader",
-                    "sass-loader",
-                ],
-            },
-            {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
-            },
-        ]
+        rules: ...
     },
     optimization: {
         moduleIds: 'deterministic',
         runtimeChunk: 'single',
-        splitChunks: {
-            cacheGroups: {
-                vendor: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: 'vendors',
-                    chunks: 'all',
-                },
-            },
-        },
+        splitChunks: ...
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -144,6 +134,21 @@ module.exports = {
     },
 }
 ```
+*<p style="text-align: center;">webpack.config.js (truncated)</p>*
+
+Our `webpack.config.js` file is one of the most important files to understanding how our frontend architecture comes together. Therefore, this section is dedicated to the settings that we have set for this file. Note that we do not explain all the settings, as some can be found and easily deduced from webpack's [configuration](https://webpack.js.org/configuration/) and [guides](https://webpack.js.org/guides/) documentation.
+
+- **entry:** the file that is ultimately read by webpack to bundle everything together. This file, `index.js` imports all dependencies and files that makes up our product. Note that [advanced multiple entry](https://webpack.js.org/guides/entry-advanced/) is possible, should we ever need it.
+- **output:** contains configurations for the files that are generated in the `static/` directory
+- **output > clean > keep:** clean is usually used to clear away old files before generating new ones (file names are variable to force browser css/js recacheing). However, keep notes files that should not be removed\*.
+- **output > filename:** this configures the name of the generated js files. [name] is simply the name of the file noted in the *entry* configuration, and [contenthash] is a randomly generated string, which forces browser recacheing.
+- **output > path:** the directory to place the generated file. This directory is the one that Django, by default, detects its static files.
+- **optimization:** this contains a catch-all for various ways to enhance either development or deployment. For more on our current configuration, read [this guide](https://webpack.js.org/guides/caching/).
+- **plugins > HtmlWebpackPlugin:** this plugin enables us to dynamically generate templates with the correct `<script>` and `<styles>` path by reading the *template* and outputing it with the path noted by *filename*. This output path follows Django's default template directory structure.
+- **watchOptions > ignored:** configures files to ignore when regenerating watched files.
+
+###### *\*Note: The kept `.gitkeep` file is there to give an empty file for git to preserve the otherwise empty directory when pushed onto GitHub. As you might have guessed, git does not push empty directories.*
 
 ### Why do we separate Babel from Webpack?
 
+If you have explored documentation from Webpack, you might learn that the *babel-loader* in **module > rules** can accept the settings noted in `.babelrc`. The reason why we separate these settings into another file is because Webpack is not, in theory, the only application that makes use of these settings. Although we have no other apps that makes use of `.babelrc` at the moment, this can change in the future. Therefore, this separation of files is a form of future proofing.
