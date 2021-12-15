@@ -1,0 +1,19 @@
+# Required
+site_name: Marshmallow Generator
+site_url: https://example.com/
+
+# Optionals
+edit_uri: ""
+nav:
+  - Home: index.md
+  - About: about.md
+  - Developers:
+    - Architecture:
+      - Architecture Summary: developer/architecture.md
+      - Backend Architecture: developer/backend.md
+      - Frontend Architecture: developer/frontend.md
+repo_url: https://github.com/Aveline-art/CivicTechJobs-Documentation/
+repo_name: GitHub
+theme:
+  name: mkdocs
+  locale: en
