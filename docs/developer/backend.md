@@ -52,9 +52,17 @@
 
 ## Summary
 
+**Backend Tech Stack**: Django, DjangoRESTFramework, Docker
+
+The backend architecture is consists the `docker/` directory, the Django `config/` project, the `frontend/` and `server/` Django apps, and a couple of Django or Docker-related loose files. In addition to serving as part of our backend, the `frontend/` directory also serves our frontend architecture. More about the `frontend/` directory as our frontend can be found in our guide on [Frontend Architecture](../../developer/frontend/).
+
+TODO: add more as we develop our backend.
+
 ## Overview of Directories and Files
 
 ## Docker
+
+
 
 ## Django App Files
 

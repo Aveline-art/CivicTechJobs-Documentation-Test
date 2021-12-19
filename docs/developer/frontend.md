@@ -46,9 +46,9 @@
 
 ## Summary
 
-**Frontend Tech Stack**: HTML, CSS, JS, React, Babel, Webpack
+**Frontend Tech Stack**: React, Babel, Webpack, HTML, CSS, JS
 
-The frontend architecture is entirely housed in our `frontend/` directory. This directory is a [Django app](https://docs.djangoproject.com/en/4.0/intro/tutorial01/), which is a set of files that can be ported to any Django-based application.
+The over ninety percent of our frontend architecture is housed in our `frontend/` directory. This directory is a [Django app](https://docs.djangoproject.com/en/4.0/intro/tutorial01/), which is a set of files that can be ported to any Django-based application.
 
 Since our frontend is a Django app, it takes advantage of the way Django serves its static assets. Every Django app, by default, looks to the `templates/`\* directory within the app for the `html` template file to serve. This template usually contains `<script>` and `<style>` tags denoting the location of CSS and JS files. In Django, these files are usually located inside the `static/`\* directory. Likewise, our frontend app store our templates and static assets within these directories.
 
