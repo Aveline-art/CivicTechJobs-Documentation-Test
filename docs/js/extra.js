@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    console.log('loaded');
     if (screen.width > 991) {
         openDropdown()
     }
@@ -13,8 +12,8 @@ function openDropdown() {
         const children = dropdown.children
 
         // too buggy, as hover is sensitive to where the mouse moves, and also it is hard to have it disappear on hover
-        
-        /*
+
+
         dropdown.addEventListener('mouseenter', () => {
             for (const i of dropdowns) {
                 const item = i.children
@@ -28,17 +27,20 @@ function openDropdown() {
             children[1].classList.add('show')
         })
         dropdown.addEventListener('mouseleave', () => {
-            setTimeout(() => {
-                dropdown.classList.remove('show')
-                children[0].removeAttribute('aria-expanded')
-                children[1].classList.remove('show')
-            }, 200);
+            dropdown.classList.remove('show')
+            children[0].removeAttribute('aria-expanded')
+            children[1].classList.remove('show')
         })
-                */
+
 
         const submenulist = children[1].children
         for (const submenu of submenulist) {
             const children = submenu.children
+
+            //might not be the best way to detect whether there is a submenu
+            if (children.length < 2) {
+                break
+            }
             submenu.addEventListener('mouseenter', () => {
                 for (const i of submenulist) {
                     const item = i.children
@@ -61,6 +63,12 @@ function openDropdown() {
                     children[1].style.top = bounds.top + 'px'
                     children[1].style.maxHeight = (maxBottom - bounds.top) + 'px'
                 }
+            })
+
+            //beta
+            submenu.addEventListener('mouseleave', () => {
+                children[0].classList.remove('open')
+                children[1].classList.remove('show')
             })
         }
     }
