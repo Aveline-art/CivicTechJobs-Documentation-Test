@@ -176,6 +176,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#additional-resources" class="nav-link">Additional Resources</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -245,7 +249,7 @@
 <h3 id="docker-composeyml"><code>docker-compose.yml</code></h3>
 <p>This file contains configuration directions for docker compose. It consists of three services: pgdb (our database), webpack (our webpack bundler), and django (our django server). The webpack and django service relies in separate dockerfiles, located in the <code>docker</code> directory to build the container. This separation of dockerfiles enable each container to be build with its own set of dependencies. It also makes rebuilding the container simple when dependencies are migrated to a newer version.</p>
 <p>For those of you used to creating applications without Docker, most would run webpack and django in separate terminals, so that they can both run at the same time. For the purposes of brevity, the different services can be considered to be Docker's way of running separate terminals. </p>
-<p>One will also notice that the Django command uses a placeholder server name, 0.0.0.0:8000. This placeholder is important, since Docker creates an isolated environment. As a result, servers that are run in Docker does not recognize a browser from outside of that environment. Without this server name, localhost:8000 will not reach the server, as the server would recognize your browser as coming from a <em>not</em> local machine. Therefore, all warnings related to 0.0.0.0, should they pop-up, should be ignored.</p>
+<p>One will also notice that the Django command uses a placeholder server name, 0.0.0.0:8000. This placeholder is important, since Docker creates an isolated environment. As a result, servers that are run in Docker does not recognize a browser from outside of that environment. Without this server name, localhost:8000 will not reach the server, as the server would recognize your browser as coming from a foreign machine. Therefore, all warnings related to 0.0.0.0, should they pop-up, should be ignored.</p>
 <h2 id="django-app-files">Django App Files</h2>
 <pre><code class="language-yml">├── migrations/
 │   └── __init__.py
@@ -263,7 +267,11 @@
 <pre><code class="language-yml">├── serializers.py
 </code></pre>
 <p><em><p style="text-align: center;">RESTFramework files used to create a Django REST API</p></em></p>
-<p>As of right now, no specific changes have been made to these files, so please refer to <a href="https://www.django-rest-framework.org/">DjangoRESTFramework's documentation</a> for now to learn what they do in a general sense.</p></div>
+<p>As of right now, no specific changes have been made to these files, so please refer to <a href="https://www.django-rest-framework.org/">DjangoRESTFramework's documentation</a> for now to learn what they do in a general sense.</p>
+<h2 id="additional-resources">Additional Resources</h2>
+<p><a href="https://docs.docker.com/">Docker Documentation</a>
+<a href="https://docs.djangoproject.com/en/4.0/">Django 4.0 Documentation</a>
+<a href="https://www.django-rest-framework.org/">DjangoRestFramework Documentation</a></p></div>
             </div>
         </div>
 
