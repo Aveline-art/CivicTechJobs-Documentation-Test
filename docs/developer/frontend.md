@@ -152,3 +152,9 @@ Our `webpack.config.js` file is one of the most important files to understanding
 ### Why do we separate Babel from Webpack?
 
 If you have explored documentation from Webpack, you might learn that the *babel-loader* in **module > rules** can accept the settings noted in `.babelrc`. The reason why we separate these settings into another file is because Webpack is not, in theory, the only application that makes use of these settings. Although we have no other apps that makes use of `.babelrc` at the moment, this can change in the future. Therefore, this separation of files is a form of future proofing.
+
+## Additional Resources
+
+[React Documentation](https://reactjs.org/docs/getting-started.html)
+[Webpack Documentation](https://webpack.js.org/concepts/)
+[@babel/preset-react Documentation](https://babeljs.io/docs/en/babel-preset-react)

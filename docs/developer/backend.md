@@ -70,7 +70,7 @@ This file contains configuration directions for docker compose. It consists of t
 
 For those of you used to creating applications without Docker, most would run webpack and django in separate terminals, so that they can both run at the same time. For the purposes of brevity, the different services can be considered to be Docker's way of running separate terminals. 
 
-One will also notice that the Django command uses a placeholder server name, 0.0.0.0:8000. This placeholder is important, since Docker creates an isolated environment. As a result, servers that are run in Docker does not recognize a browser from outside of that environment. Without this server name, localhost:8000 will not reach the server, as the server would recognize your browser as coming from a *not* local machine. Therefore, all warnings related to 0.0.0.0, should they pop-up, should be ignored.
+One will also notice that the Django command uses a placeholder server name, 0.0.0.0:8000. This placeholder is important, since Docker creates an isolated environment. As a result, servers that are run in Docker does not recognize a browser from outside of that environment. Without this server name, localhost:8000 will not reach the server, as the server would recognize your browser as coming from a foreign machine. Therefore, all warnings related to 0.0.0.0, should they pop-up, should be ignored.
 
 ## Django App Files
 
@@ -97,3 +97,8 @@ As of right now, no specific changes have been made to these files, so please re
 *<p style="text-align: center;">RESTFramework files used to create a Django REST API</p>*
 
 As of right now, no specific changes have been made to these files, so please refer to [DjangoRESTFramework's documentation](https://www.django-rest-framework.org/) for now to learn what they do in a general sense.
+
+## Additional Resources
+[Docker Documentation](https://docs.docker.com/)
+[Django 4.0 Documentation](https://docs.djangoproject.com/en/4.0/)
+[DjangoRestFramework Documentation](https://www.django-rest-framework.org/)
