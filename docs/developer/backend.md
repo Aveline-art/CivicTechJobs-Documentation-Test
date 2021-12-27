@@ -99,6 +99,6 @@ As of right now, no specific changes have been made to these files, so please re
 As of right now, no specific changes have been made to these files, so please refer to [DjangoRESTFramework's documentation](https://www.django-rest-framework.org/) for now to learn what they do in a general sense.
 
 ## Additional Resources
-[Docker Documentation](https://docs.docker.com/)
-[Django 4.0 Documentation](https://docs.djangoproject.com/en/4.0/)
-[DjangoRestFramework Documentation](https://www.django-rest-framework.org/)
+[Docker Documentation](https://docs.docker.com/)<br>
+[Django 4.0 Documentation](https://docs.djangoproject.com/en/4.0/)<br>
+[DjangoRestFramework Documentation](https://www.django-rest-framework.org/)<br>

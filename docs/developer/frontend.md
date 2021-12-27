@@ -155,6 +155,6 @@ If you have explored documentation from Webpack, you might learn that the *babel
 
 ## Additional Resources
 
-[React Documentation](https://reactjs.org/docs/getting-started.html)
-[Webpack Documentation](https://webpack.js.org/concepts/)
-[@babel/preset-react Documentation](https://babeljs.io/docs/en/babel-preset-react)
+[React Documentation](https://reactjs.org/docs/getting-started.html)<br>
+[Webpack Documentation](https://webpack.js.org/concepts/)<br>
+[@babel/preset-react Documentation](https://babeljs.io/docs/en/babel-preset-react)<br>
