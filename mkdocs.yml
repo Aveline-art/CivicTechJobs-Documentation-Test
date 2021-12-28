@@ -19,7 +19,6 @@ nav:
       - Placeholder: about.md
     - Web Developer:
       - CONTRIBUTING.md: https://github.com/hackforla/CivicTechJobs/blob/main/README.md
-      - Architecture Summary: developer/architecture.md
       - Backend Architecture: developer/backend.md
       - Developer Workflow Cycle: developer/developer-flow.md
       - Frontend Architecture: developer/frontend.md
