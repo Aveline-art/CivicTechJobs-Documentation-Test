@@ -18,6 +18,7 @@ nav:
       - Developer Workflow Cycle: developer/developer-flow.md
       - Frontend Architecture: developer/frontend.md
       - GitHub Architecture: developer/github.md
+      - Installation Instructions: developer/installation.md
     - Product Manager:
       - Placeholder: about.md
     - UI Designer:
