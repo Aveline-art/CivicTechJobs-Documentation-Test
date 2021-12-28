@@ -1,8 +1,8 @@
 # Installation Instructions
 
-This guide runs through the steps needed to create an run a local version of our project.
+This guide runs through the steps needed to create and run a local version of our project.
 
-If you are ever stuck or need clarification, you can [contact our team members]() or the development lead and schedule a pair programming session with one of our developers. All of us have been through these steps, and am more than happy to help. By helping you, we can better improve our documentation and grow this project!
+If you are ever stuck or need clarification, you can [contact our team members]() or the development lead, if you know them, and schedule a pair programming session with one of our developers. All of us have been through these steps, and am more than happy to help. By helping you, we can better improve our documentation and grow this project!
 
 ## Required Downloads
 
@@ -12,7 +12,7 @@ Docker - [Windows](https://docs.docker.com/desktop/windows/install/) - [macOS](h
 
 <details>
 <summary>Note on macOS</summary>
-The macOS version of git involves downloading extra programs, such as Homebrew. In some cases this program can run up to 8GB of storage space, which might be too much for some. In that scenario, a <a href='https://www.datacamp.com/community/tutorials/homebrew-install-use'>miniature version Homebrew can be installed through XCode</a>. But do be warned that the containers for our project also takes up a substantial amount of disk space as well. Do also consider freeing up your disk space by deleting or backing up unneeded files like photos or videos and delete programs that are no longer useful. Your OS's native disk cleaner can also help clear out unused cache files.
+The macOS version of git involves downloading extra programs, such as Homebrew. In some cases this program can run up to 8GB of storage space, which might be too much for some. In that scenario, a <a href='https://www.datacamp.com/community/tutorials/homebrew-install-use'>miniature version of Homebrew can be installed through XCode</a>. But do be warned that the containers for our project also takes up a substantial amount of disk space as well. Do consider freeing up your disk space by deleting or backing up unneeded files, like photos or videos, and delete programs that are no longer useful. Your OS's native disk cleaner can also clear out unused cache files.
 </details><br>
 
 ## Environmental Setup
@@ -23,7 +23,7 @@ The macOS version of git involves downloading extra programs, such as Homebrew. 
 
 ## Running Docker
 
-To run our website, and the Docker container, in the terminal at the root directory of our project, `CivicTechJobs/`, enter the command, `docker compose up`, and visit http://localhost:8000/. You should now see the front page of our website.
+To run our website and the Docker container, in the terminal at the root directory of our project, `CivicTechJobs/`, enter the command, `docker compose up`, and visit http://localhost:8000/. You should now see the front page of our website.
 
 ## Frequently Asked Questions
 
