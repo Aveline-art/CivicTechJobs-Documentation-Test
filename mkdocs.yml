@@ -11,6 +11,12 @@ extra_javascript:
 nav:
   - Joining the Team: index.md
   - Roles:
+    - Product Manager:
+      - Placeholder: about.md
+    - UI Designer:
+      - Placeholder: about.md
+    - UX Researcher:
+      - Placeholder: about.md
     - Web Developer:
       - CONTRIBUTING.md: https://github.com/hackforla/CivicTechJobs/blob/main/README.md
       - Architecture Summary: developer/architecture.md
@@ -19,12 +25,6 @@ nav:
       - Frontend Architecture: developer/frontend.md
       - GitHub Architecture: developer/github.md
       - Installation Instructions: developer/installation.md
-    - Product Manager:
-      - Placeholder: about.md
-    - UI Designer:
-      - Placeholder: about.md
-    - UX Researcher:
-      - Placeholder: about.md
   - Resources:
     - Google: https://google.com
 repo_url: https://github.com/Aveline-art/CivicTechJobs-Documentation/
