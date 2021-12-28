@@ -43,3 +43,4 @@ Make sure that your terminal location is in a directory with a `docker-compose.y
 [Docker Documentation](https://docs.docker.com/)<br>
 [Frontend Architecture](https://github.com/hackforla/CivicTechJobs/wiki/Frontend-Architecture)<br>
 [Backend Architecture](https://github.com/hackforla/CivicTechJobs/wiki/Backend-Architecture)<br>
+[GitHub Architecture](https://github.com/hackforla/CivicTechJobs/wiki/GitHub-Architecture)<br>

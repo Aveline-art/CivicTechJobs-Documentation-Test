@@ -24,8 +24,7 @@ nav:
       - Frontend Architecture: developer/frontend.md
       - GitHub Architecture: developer/github.md
       - Installation Instructions: developer/installation.md
-  - Resources:
-    - Google: https://google.com
+  - Resources: resources.md
 repo_url: https://github.com/Aveline-art/CivicTechJobs-Documentation/
 repo_name: GitHub
 theme:
