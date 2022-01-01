@@ -102,14 +102,8 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Resources <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="https://google.com" class="dropdown-item">Google</a>
-</li>
-                                </ul>
+                            <li class="navitem">
+                                <a href="../../resources/" class="nav-link">Resources</a>
                             </li>
                         </ul>
 
@@ -125,7 +119,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../../resources/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -191,7 +185,7 @@
 Docker - <a href="https://docs.docker.com/desktop/windows/install/">Windows</a> - <a href="https://docs.docker.com/desktop/mac/install/">macOS</a> - <a href="https://docs.docker.com/engine/install/">Linux/Unix</a></p>
 <details>
 <summary>Note on macOS</summary>
-The macOS version of git involves downloading extra programs, such as Homebrew. In some cases this program can run up to 8GB of storage space, which might be too much for some. In that scenario, a <a href='https://www.datacamp.com/community/tutorials/homebrew-install-use'>miniature version of Homebrew can be installed through XCode</a>. But do be warned that the containers for our project also takes up a substantial amount of disk space as well. Do consider freeing up your disk space by deleting or backing up unneeded files, like photos or videos, and delete programs that are no longer useful. Your OS's native disk cleaner can also clear out unused cache files.
+The macOS version of git involves downloading extra programs, such as Homebrew. In some cases this program can run up to 8GB of storage space, which might be too much for some. In that scenario, a <a href='https://www.datacamp.com/community/tutorials/homebrew-install-use'>miniature version of Homebrew can be installed through XCode</a>. But do be warned that the containers for our project takes up a substantial amount of disk space as well. Do consider freeing up your disk space by deleting or backing up unneeded files, like photos or videos, and delete programs that are no longer useful. Your OS's native disk cleaner can also clear out unused cache files.
 </details>
 <p><br></p>
 <h2 id="environmental-setup">Environmental Setup</h2>
@@ -201,7 +195,11 @@ The macOS version of git involves downloading extra programs, such as Homebrew. 
 <li><a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-original-repository">Configuring Git to sync your fork with the original repository.</a> When configuring, make sure to not blindly copy and paste the commands without making appropriate edits, especially when it involves your username or the repository name. </li>
 </ol>
 <h2 id="running-docker">Running Docker</h2>
-<p>To run our website and the Docker container, in the terminal at the root directory of our project, <code>CivicTechJobs/</code>, enter the command, <code>docker compose up</code>, and visit http://localhost:8000/. You should now see the front page of our website.</p>
+<ol>
+<li>Navigate to the root of our directory, <code>CivicTechJobs/</code>, in the terminal.</li>
+<li>In the terminal enter <code>docker compose up</code>.</li>
+<li>Visit http://localhost:8000/ and you should see the front page of our website.</li>
+</ol>
 <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 <p>This section might answer some of the burning questions you have. If you cannot find it here, be sure to <a href="">contact us</a> or the development lead.</p>
 <h3 id="troubleshooting-errors">Troubleshooting Errors</h3>
@@ -213,7 +211,8 @@ The macOS version of git involves downloading extra programs, such as Homebrew. 
 <p><a href="https://git-scm.com/doc">Git Documentation</a><br>
 <a href="https://docs.docker.com/">Docker Documentation</a><br>
 <a href="https://github.com/hackforla/CivicTechJobs/wiki/Frontend-Architecture">Frontend Architecture</a><br>
-<a href="https://github.com/hackforla/CivicTechJobs/wiki/Backend-Architecture">Backend Architecture</a><br></p></div>
+<a href="https://github.com/hackforla/CivicTechJobs/wiki/Backend-Architecture">Backend Architecture</a><br>
+<a href="https://github.com/hackforla/CivicTechJobs/wiki/GitHub-Architecture">GitHub Architecture</a><br></p></div>
             </div>
         </div>
 
