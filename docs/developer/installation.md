@@ -12,7 +12,7 @@ Docker - [Windows](https://docs.docker.com/desktop/windows/install/) - [macOS](h
 
 <details>
 <summary>Note on macOS</summary>
-The macOS version of git involves downloading extra programs, such as Homebrew. In some cases this program can run up to 8GB of storage space, which might be too much for some. In that scenario, a <a href='https://www.datacamp.com/community/tutorials/homebrew-install-use'>miniature version of Homebrew can be installed through XCode</a>. But do be warned that the containers for our project also takes up a substantial amount of disk space as well. Do consider freeing up your disk space by deleting or backing up unneeded files, like photos or videos, and delete programs that are no longer useful. Your OS's native disk cleaner can also clear out unused cache files.
+The macOS version of git involves downloading extra programs, such as Homebrew. In some cases this program can run up to 8GB of storage space, which might be too much for some. In that scenario, a <a href='https://www.datacamp.com/community/tutorials/homebrew-install-use'>miniature version of Homebrew can be installed through XCode</a>. But do be warned that the containers for our project takes up a substantial amount of disk space as well. Do consider freeing up your disk space by deleting or backing up unneeded files, like photos or videos, and delete programs that are no longer useful. Your OS's native disk cleaner can also clear out unused cache files.
 </details><br>
 
 ## Environmental Setup
@@ -23,7 +23,9 @@ The macOS version of git involves downloading extra programs, such as Homebrew. 
 
 ## Running Docker
 
-To run our website and the Docker container, in the terminal at the root directory of our project, `CivicTechJobs/`, enter the command, `docker compose up`, and visit http://localhost:8000/. You should now see the front page of our website.
+1. Navigate to the root of our directory, `CivicTechJobs/`, in the terminal.
+2. In the terminal enter `docker compose up`.
+3. Visit http://localhost:8000/ and you should see the front page of our website.
 
 ## Frequently Asked Questions
 
