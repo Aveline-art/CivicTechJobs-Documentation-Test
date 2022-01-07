@@ -2,7 +2,7 @@
 
 This guide runs through the steps needed to create and run a local version of our project.
 
-If you are ever stuck or need clarification, you can [contact our team members]() or the development lead, if you know them, and schedule a pair programming session with one of our developers. All of us have been through these steps, and am more than happy to help. By helping you, we can better improve our documentation and grow this project!
+If you are ever stuck or need clarification, you can contact our team members or the development lead through our [Slack](https://hackforla.slack.com/archives/C02509WHFQQ) or [email](mailto:Civictechjobs@hackforla.org), and schedule a pair programming session with one of our developers. All of us have been through these steps, and am more than happy to help. By helping you, we can better improve our documentation and grow this project!
 
 ## Required Downloads
 
@@ -29,7 +29,7 @@ The macOS version of git involves downloading extra programs, such as Homebrew. 
 
 ## Frequently Asked Questions
 
-This section might answer some of the burning questions you have. If you cannot find it here, be sure to [contact us]() or the development lead.
+This section might answer some of the burning questions you have. If you cannot find it here, be sure to contact our team members or the development lead through our [Slack](https://hackforla.slack.com/archives/C02509WHFQQ) or [email](mailto:Civictechjobs@hackforla.org).
 
 ### Troubleshooting Errors
 
