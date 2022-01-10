@@ -38,7 +38,7 @@ On occasion, when an issue is being worked on for an inordinate amount of time, 
 
 Most issues can be divided into two broad types: frontend issues, and backend issues.
 
-## Frontend issues
+### Frontend issues
 
 - Usually involves the appearance of the website
 - Usually easier than backend issues
@@ -50,7 +50,7 @@ When working on frontend issues, there will usually be a link to the Figma desig
 
 On rare circumstances, designs can change in the middle of work. This is something that happens as part of development, but will often be telegraphed during meetings. If a design change, you are free to reassess and abandon your current issue, or code pragmatically to ensure your work would not need a massive overhaul.
 
-## Backend issues
+### Backend issues
 
 - Usually involves research and discussion
 - Can also pertain to [GitHub Actions](https://docs.github.com/en/actions)
