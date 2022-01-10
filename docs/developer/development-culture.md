@@ -1,4 +1,4 @@
-# Developer Workflow Cycle
+# Development Culture
 
 At CivicTechJobs, the developers of our team have 3 key tasks:
 
