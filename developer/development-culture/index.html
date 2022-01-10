@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://aveline-art.github.io/CivicTechJobs-Documentation/developer/backend/">
+        <link rel="canonical" href="https://aveline-art.github.io/CivicTechJobs-Documentation/developer/development-culture/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Backend Architecture - CivicTechJobs Docs</title>
+        <title>Development Culture - CivicTechJobs Docs</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -77,11 +77,11 @@
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">Backend Architecture</a>
+    <a href="../backend/" class="dropdown-item">Backend Architecture</a>
 </li>
             
 <li>
-    <a href="../development-culture/" class="dropdown-item">Development Culture</a>
+    <a href="./" class="dropdown-item active">Development Culture</a>
 </li>
             
 <li>
@@ -114,12 +114,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../about/" class="nav-link">
+                                <a rel="prev" href="../backend/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../development-culture/" class="nav-link">
+                                <a rel="next" href="../frontend/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -144,33 +144,17 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#backend-architecture" class="nav-link">Backend Architecture</a>
+            <li class="nav-item" data-level="1"><a href="#development-culture" class="nav-link">Development Culture</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#summary" class="nav-link">Summary</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#overview-of-directories-and-files" class="nav-link">Overview of Directories and Files</a>
+            <li class="nav-item" data-level="2"><a href="#make-issues" class="nav-link">Make Issues</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#docker" class="nav-link">Docker</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="3"><a href="#docker-composeyml" class="nav-link">docker-compose.yml</a>
+            <li class="nav-item" data-level="2"><a href="#resolve-issues" class="nav-link">Resolve Issues</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#django-app-files" class="nav-link">Django App Files</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#django-rest-framework-files" class="nav-link">Django REST Framework Files</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#additional-resources" class="nav-link">Additional Resources</a>
+            <li class="nav-item" data-level="2"><a href="#review-code" class="nav-link">Review Code</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -181,91 +165,65 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="backend-architecture">Backend Architecture</h1>
-<pre><code class="language-yml">├── .github/
-│   └── ISSUE_TEMPLATE/
-├── config/    # Backend
-├── docker/    # Backend
-├── frontend/    # Backend
-│   ├── migrations/    # Backend
-│   ├── src/
-│       ├── assets/
-│       ├── components/
-│       ├── pages/
-│       └── templates/
-│   ├── static/
-│       └── frontend/
-│   └── templates/
-│       └── frontend/
-├── server/    # Backend
-│   └── migrations/    # Backend
-└── &lt;loose files&gt;    # Backend
-</code></pre>
-<p><em><p style="text-align: center;">Overall project structure</p></em></p>
-<pre><code class="language-yml">├── config/
-│   ├── &lt;Django Project Files&gt;
-├── docker/
-│   ├── django
-│   └── webpack
-├── frontend/
-│   └── &lt;Django App Files&gt;
-├── server/
-│   ├── &lt;Django App Files&gt;
-│   └── &lt;RESTFramework Files&gt;
-├── .dockerignore
-├── docker-compose.yml
-├── manage.py 
-└── requirements.txt 
-</code></pre>
-<p><em><p style="text-align: center;">Backend Architecture</p></em></p>
-<h2 id="summary">Summary</h2>
-<p><strong>Backend Tech Stack</strong>: Django, DjangoRESTFramework, Docker</p>
-<p>The backend architecture is consists the <code>docker/</code> directory, the Django <code>config/</code> project, the <code>frontend/</code> and <code>server/</code> Django apps, and a couple of Django or Docker-related loose files. In addition to serving as part of our backend, the <code>frontend/</code> directory also serves our frontend architecture. More about the <code>frontend/</code> directory as it relates our frontend architecture can be found in our guide on <a href="../../developer/frontend/">Frontend Architecture</a>.</p>
-<h2 id="overview-of-directories-and-files">Overview of Directories and Files</h2>
+<h1 id="development-culture">Development Culture</h1>
+<p>At CivicTechJobs, the developers of our team have 3 key tasks:</p>
 <ul>
-<li><strong>config/:</strong> houses the Django project files.<ul>
-<li><strong>&lt;Django Project Files>:</strong> More on the files in this directory can be found in <a href="https://docs.djangoproject.com/en/4.0/">Django's documentation</a>.</li>
+<li>Make issues</li>
+<li>Resolve issues</li>
+<li>Review code</li>
 </ul>
-</li>
-<li><strong>docker/:</strong> contains two dockerfiles. <code>django</code> contains information for our Django server setup. <code>webpack</code> contains information to start our webpack watch plugin.</li>
-<li><strong>&lt;Django App>:</strong> currently we have two directories that are Django apps: <code>frontend/</code> and <code>server/</code>. Within these directories are the default <code>&lt;Django App Files&gt;</code> that are created with every app as well as <code>&lt;RESTFramework Files&gt;</code>.<ul>
-<li><strong>&lt;Django App Files>:</strong> These files make up a Django App. To know more about these apps, read the section about <a href="#django-app-files">Django App Files</a>.</li>
-<li><strong>&lt;RESTFramework Files>:</strong> Currently consists of only <code>serializers.py</code>, these files are additional files that support Django via the <a href="https://www.django-rest-framework.org/">DjangoRestFramework library</a>.</li>
+<p>This guide will discuss how each of these work at CivicTechJobs.</p>
+<h2 id="make-issues">Make Issues</h2>
+<blockquote>
+<p>To make an issue, follow <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue">this guide</a> from GitHub, or take a look at <a href="https://github.com/hackforla/CivicTechJobs/blob/main/CONTRIBUTING.md#making-issues-1">this section</a> of the CONTRIBUTING.md.</p>
+</blockquote>
+<p>At CivicTechJobs, updating the project starts with creating an issue noting changes that needs to be made. When writing an issue, a good rule of thumb is to write as if another developer would be the one to work on this issue. Therefore, being thorough is better than brief. Some good guidelines to follow:</p>
+<ul>
+<li>Write a brief, two sentence summary for the overview. Be sure to note why these changes is needed.</li>
+<li>In the overview, use language with little jargon.</li>
+<li>Action items are usually step by step instructions or requirements.</li>
+<li>Longer explanations or useful documentation, if needed, are placed in the Instruction/Resources section.</li>
+<li>Dependencies should 90% of the time be another issue. If the dependency does not exist, it should probably be made and referenced as a dependency.</li>
+<li>Likewise, the dependency should reference the issue it is a dependency for so that there is a trail to release issues with dependencies.</li>
+<li>Check out examples of developer issues, such as <a href="https://github.com/hackforla/CivicTechJobs/issues/61">this</a>, for how to structure and word issues.</li>
 </ul>
-</li>
-<li><strong>.dockerignore:</strong> This file tells Docker to ignore certain files when building the container. These are usually files that pertain to docker or git, which are not important when building the webserver.</li>
-<li><strong>docker-compose.yml:</strong> Contains instructions for docker when we run "docker compose". To know more about what each line does, please consult <a href="https://docs.docker.com/compose/compose-file/">Docker's documentation</a>.</li>
-<li><strong>manage.py:</strong> Part of Django, this is the entry point file for starting the Django server. This file handles a lot of critical settings, so be sure to read up on it in <a href="https://docs.djangoproject.com/en/4.0/ref/django-admin/">Django's documentation</a>.</li>
-<li><strong>requirements.txt:</strong> A Python file that contains all dependencies for a project. It is the Python equivalent to Javascript's <code>package.json</code>.</li>
+<p>After writing out the issue, be sure to <a href="https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels#applying-a-label">add labels to the issue</a>. At minimum we need three labels, one each from the "size", "role" and "feature/p-feature" series. In most cases, you should not create your own label. If you cannot choose a label, it is okay to leave it be, and request the project management team to create a new label for you.</p>
+<p>Once an issue is created, and placed in the <a href="https://github.com/hackforla/CivicTechJobs/projects/1">Project Management</a> project board, the developer is mostly done with the issue. If the issue contains a dependency, it will move into the "Ice Box" column via <a href="https://github.com/hackforla/CivicTechJobs/blob/bafc2fc1706ac49ec9c2c7cb610a29bddc561339/.github/workflows/issue-trigger.yml#L7">GitHub automation</a>, or "New Issue Approval", otherwise.</p>
+<p>On rare occasions, a project manager, or other team members, might ping you with questions on the issue. Perhaps the team member did not understand the jargon, or instructions were unclear. In that case, read their comments carefully and either answer them in a comment, or edit the original issue. Eventually, the project management team will be able to correctly assess the priority of the issue and release it into the "Prioritized Backlog" column, where developers can work on it.</p>
+<h2 id="resolve-issues">Resolve Issues</h2>
+<blockquote>
+<p>To resolve an issue, take a look at <a href="https://github.com/hackforla/CivicTechJobs/blob/main/CONTRIBUTING.md#resolving-issues-1">this section</a> of the CONTRIBUTING.md.</p>
+</blockquote>
+<p>When choosing an issue to work on from the "Prioritized Backlog" column, it is good to notice the role and size. This will signal to you the expertise required and time commitment, respectively. As a rule of thumb, every developer should complete a smaller issue withinin a week and larger issues within two or three. This should give you a good idea on what issues is best for you to take at the moment. If you are completely new, we do recommend smaller issues just to understand your limits before pushing them further. That said, you are free to take whatever you want.</p>
+<p>On occasion, when an issue is being worked on for an inordiante amount of time, the team might request an update on your progress. When giving your progress, it is also courteous to give an ETA on the issue, and evaluate on whether you have the time availibilty and expertise to deliver in a reasonable timeframe. If an issue is taking far too long, it might be a sign to abandon the issue and work on something that might bring more value to you.</p>
+<p>Most issues can be divided into two broad types: frontend issues, and backend issues.</p>
+<p>Frontend issues:
+- Usually involves the appearence of the website
+- Usually easier than backend issues
+- Requires little research
+- Is occasionally an audit
+- May involve documentation</p>
+<p>When working on frontend issues, there will usually be a link to the Figma design. Figma often contain multiple prototypes and future prototypes. When looking for our current design, go to the bottom right corner and look for a pink rectangle. Anything within represents our most up-to-date design, and that is the page you must reference when working on your issue. If it is not there, please request the UI design team to put a pink rectangle on the latest approved design.</p>
+<p>Very rarely, designs can change in the middle of work. Designers never does this intentially; they require sign off before changing designs. This is a part of development, but the good news is that you will often be aware of upcoming changes during our meetings and can adjust accordingly. You are free to abandon your current issue, or code pragmatically according to the tea leaves.</p>
+<p>Backend issues:
+- Usually involves research and discussion
+- Can also pertain to <a href="https://docs.github.com/en/actions">GitHub Actions</a>
+- Usually takes some time
+- May involve documentation</p>
+<h2 id="review-code">Review Code</h2>
+<blockquote>
+<p>To review code, please take a look at this <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews">GitHub documentation</a>, and this portion of our <a href="https://github.com/hackforla/CivicTechJobs/blob/main/CONTRIBUTING.md#reviewing-code">CONTRIBUTING.md</a>.</p>
+</blockquote>
+<p>Code that should be reviewed is found in the <a href="https://github.com/hackforla/CivicTechJobs/pulls">pull request tab</a>. These are issues that require someone to look over for several criteria:</p>
+<ul>
+<li>Applicability: Were the correct changed made? Is the code in the source code only changed to resolve the issue, and nothing else extraneous?</li>
+<li>Brokenness: Did the changes break the website?</li>
+<li>Cleanliness: Is the new code programatic or messy? If it is hard to maintain in the long run, it should not be merged unless it is highly critical.</li>
 </ul>
-<h2 id="docker">Docker</h2>
-<p>Docker is a platform that allows packaging and virtualizing applications within a container, giving it the powerful ability to collaborate in a stable, inter-developer environment, and deploying web applications with the greatest of ease. We will not be going too much into Docker here, but we will explain in greater depth some of the Docker configurations we have made.</p>
-<h3 id="docker-composeyml"><code>docker-compose.yml</code></h3>
-<p>This file contains configuration directions for docker compose. It consists of three services: pgdb (our database), webpack (our webpack bundler), and django (our django server). The webpack and django service relies in separate dockerfiles, located in the <code>docker</code> directory to build the container. This separation of dockerfiles enable each container to be build with its own set of dependencies. It also makes rebuilding the container simple when dependencies are migrated to a newer version.</p>
-<p>For those of you used to creating applications without Docker, most would run webpack and django in separate terminals, so that they can both run at the same time. For the purposes of brevity, the different services can be considered to be Docker's way of running separate terminals. </p>
-<p>One will also notice that the Django command uses a placeholder server name, 0.0.0.0:8000. This placeholder is important, since Docker creates an isolated environment. As a result, servers that are run in Docker does not recognize a browser from outside of that environment. Without this server name, localhost:8000 will not reach the server, as the server would recognize your browser as coming from a foreign machine. Therefore, all warnings related to 0.0.0.0, should they pop-up, should be ignored.</p>
-<h2 id="django-app-files">Django App Files</h2>
-<pre><code class="language-yml">├── migrations/
-│   └── __init__.py
-├── __init__.py
-├── admin.py
-├── apps.py
-├── models.py
-├── tests.py
-├── urls.py
-└── views.py
-</code></pre>
-<p><em><p style="text-align: center;">Files generated by Django when creating a new Django app</p></em></p>
-<p>As of right now, no specific changes have been made to these files, so please refer to <a href="https://docs.djangoproject.com/en/4.0/">Django's documentation</a> for now to learn what they do in a general sense.</p>
-<h2 id="django-rest-framework-files">Django REST Framework Files</h2>
-<pre><code class="language-yml">├── serializers.py
-</code></pre>
-<p><em><p style="text-align: center;">RESTFramework files used to create a Django REST API</p></em></p>
-<p>As of right now, no specific changes have been made to these files, so please refer to <a href="https://www.django-rest-framework.org/">DjangoRESTFramework's documentation</a> for now to learn what they do in a general sense.</p>
-<h2 id="additional-resources">Additional Resources</h2>
-<p><a href="https://docs.docker.com/">Docker Documentation</a><br>
-<a href="https://docs.djangoproject.com/en/4.0/">Django 4.0 Documentation</a><br>
-<a href="https://www.django-rest-framework.org/">DjangoRestFramework Documentation</a><br></p></div>
+<p>When code meets all three criteria, it can then be merged and made a part of the website. Otherwise, the review should indicate changes that needs to be made.</p>
+<p>As an advanced project, CivicTechJobs have certain expectations for our developers. One of these is that issues of size 1 or 2 is small enough that we pre-review them. What this means is that we believe these issues are too small for a developer to. colloquially speaking, screw it up. These issues can be merged directly without a review from another developer. That said, it is still fine to request the team to review these issues, if you truly desire feedback.</p>
+<p><strong>Important:</strong> Although issues can be pre-reviewed, do not make a habit of merging directly without making a pull request. There will be times when you performed an accidential merge, which could be a pain to fix.</p>
+<p>As one final note, code can be merged solely on one review as our team is small, but as with pre-reviewed pull requests, it is fine to request another pair of eyes.</p></div>
             </div>
         </div>
 
