@@ -39,6 +39,18 @@ Make sure to turn on Docker by opening the Docker program on your desktop.
 ##### 2. can't find a suitable configuration file in this directory or any parent: not found
 Make sure that your terminal location is in a directory with a `docker-compose.yml` file. And make sure that the file is not hidden.
 
+##### 3. code ERR_SOCKET_TIMEOUT
+
+This can result for several reasons, such as havin your sockets overloaded. In order to prevent this, the best thing to do is to lower the amount of sockets used when performing npm install. Change this line in `docker/webpack`:
+
+`RUN npm install`
+
+to:
+
+`RUN npm install --maxsockets=1`
+
+This should allow `docker compose up` to work. Be sure to delete the addition once your image and container is set up.
+
 
 ## Additional Resources
 [Git Documentation](https://git-scm.com/doc)<br>

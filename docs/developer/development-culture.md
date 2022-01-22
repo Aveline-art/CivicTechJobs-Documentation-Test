@@ -6,7 +6,7 @@ At CivicTechJobs, the developers of our team have 3 key tasks:
 - Resolve issues
 - Review code
 
-This guide will discuss how each of these work at CivicTechJobs.
+This guide will discuss how each of these work at CivicTechJobs. If you have any questions be sure to let us know! We strive to create an inclusive space for developers to learn and achieve their goals.
 
 ## Make Issues
 
