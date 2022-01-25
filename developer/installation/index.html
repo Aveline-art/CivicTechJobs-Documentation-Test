@@ -207,6 +207,12 @@ The macOS version of git involves downloading extra programs, such as Homebrew. 
 <p>Make sure to turn on Docker by opening the Docker program on your desktop.</p>
 <h5 id="2-cant-find-a-suitable-configuration-file-in-this-directory-or-any-parent-not-found">2. can't find a suitable configuration file in this directory or any parent: not found</h5>
 <p>Make sure that your terminal location is in a directory with a <code>docker-compose.yml</code> file. And make sure that the file is not hidden.</p>
+<h5 id="3-code-err_socket_timeout">3. code ERR_SOCKET_TIMEOUT</h5>
+<p>This can result for several reasons, such as havin your sockets overloaded. In order to prevent this, the best thing to do is to lower the amount of sockets used when performing npm install. Change this line in <code>docker/webpack</code>:</p>
+<p><code>RUN npm install</code></p>
+<p>to:</p>
+<p><code>RUN npm install --maxsockets=1</code></p>
+<p>This should allow <code>docker compose up</code> to work. Be sure to delete the addition once your image and container is set up.</p>
 <h2 id="additional-resources">Additional Resources</h2>
 <p><a href="https://git-scm.com/doc">Git Documentation</a><br>
 <a href="https://docs.docker.com/">Docker Documentation</a><br>
