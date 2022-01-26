@@ -24,8 +24,11 @@ The macOS version of git involves downloading extra programs, such as Homebrew. 
 ## Running Docker
 
 1. Navigate to the root of our directory, `CivicTechJobs/`, in the terminal.
-2. In the terminal enter `docker compose up`.
-3. Visit http://localhost:8000/ and you should see the front page of our website.
+2. In the root, create a file named, `secret_key.txt`.
+3. In this newly created file, input a secret key, either generated through [Python's secrets's library](https://docs.python.org/3/library/secrets.html#secrets.token_urlsafe) or from an online key generator (don't worry, this is not used in production, only locally).
+4. In the terminal enter `docker compose build` and wait for the build to finish.
+5. Then, enter `docker compose up` to run the local server.
+6. Visit http://localhost:8000/ and you should see the front page of our website!
 
 ## Frequently Asked Questions
 
