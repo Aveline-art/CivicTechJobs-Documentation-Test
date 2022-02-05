@@ -10,12 +10,12 @@ extra_javascript:
   - js/extra.js
 nav:
   - Roles:
-    - Product Manager:
-      - Placeholder: about.md
-    - UI Designer:
-      - Placeholder: about.md
-    - UX Researcher:
-      - Placeholder: about.md
+    #- Product Manager:
+    #  - Placeholder: about.md
+    #- UI Designer:
+    #  - Placeholder: about.md
+    #- UX Researcher:
+    #  - Placeholder: about.md
     - Web Developer:
       - CONTRIBUTING.md: https://github.com/hackforla/CivicTechJobs/blob/main/CONTRIBUTING.md#welcome-to-the-civictechjobs-contributing-guide
       - Backend Architecture: developer/backend.md
