@@ -56,9 +56,9 @@ This should allow `docker compose up` to work. Be sure to delete the addition on
 
 ##### 4. [dependency] not found
 
-This sometimes happen when npm did not install successfully. In this scenario, you need to manually install the dependencies inside the container. Generally the command to run something inside a container is:
+This sometimes happen when npm did not install successfully. In this scenario, you need to manually install the dependencies inside the container. Generally the command to run a command inside a container is:
 
-`docker compose run [container name]`
+`docker compose run [container name] [command to run in container]`
 
 In this scenario, the full command would be:
 
