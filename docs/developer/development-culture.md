@@ -36,7 +36,7 @@ When choosing an issue to work on from the "Prioritized Backlog" column, it is g
 
 On occasion, when an issue is being worked on for an inordinate amount of time, the team might request an update on your progress. When giving your progress, it is courteous to give an ETA on the issue, and evaluate on your ability to resolve the issue in a reasonable timeframe. If an issue is taking far too long, it might be wise to abandon the issue and work on something that might bring more value to you and the team.
 
-Also, one final note: **Do not contact the team via e-mail or Slack to review your pull request! The team will occasionally comb for pull requests and review them.** If you want to move on to another issue, consider reviewing another developer's pull request (if you are part of the team), contribute to other open source projects, or ask the team for additional tasks.
+Also, one final note: **Do not contact the team via e-mail or Slack to review your pull request unless it as been 72 hours since it was opened! The team will occasionally comb for pull requests and review them.** If you want to move on to another issue, consider reviewing another developer's pull request (if you are part of the team), contribute to other open source projects, or ask the team for additional tasks.
 
 Most issues can be divided into two broad types: frontend issues, and backend issues.
 
