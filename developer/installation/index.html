@@ -186,6 +186,11 @@ The macOS version of git involves downloading extra programs, such as Homebrew. 
 <p>to:</p>
 <p><code>RUN npm install --maxsockets=1</code></p>
 <p>This should allow <code>docker compose up</code> to work. Be sure to delete the addition once your image and container is set up.</p>
+<h5 id="4-dependency-not-found">4. [dependency] not found</h5>
+<p>This sometimes happen when npm did not install successfully. In this scenario, you need to manually install the dependencies inside the container. Generally the command to run a command inside a container is:</p>
+<p><code>docker compose run [container name] [command to run in container]</code></p>
+<p>In this scenario, the full command would be:</p>
+<p><code>docker compose run webpack npm install</code></p>
 <h2 id="additional-resources">Additional Resources</h2>
 <p><a href="https://git-scm.com/doc">Git Documentation</a><br>
 <a href="https://docs.docker.com/">Docker Documentation</a><br>
