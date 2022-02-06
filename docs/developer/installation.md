@@ -54,6 +54,16 @@ to:
 
 This should allow `docker compose up` to work. Be sure to delete the addition once your image and container is set up.
 
+##### 4. [dependency] not found
+
+This sometimes happen when npm did not install successfully. In this scenario, you need to manually install the dependencies inside the container. Generally the command to run something inside a container is:
+
+`docker compose run [container name]`
+
+In this scenario, the full command would be:
+
+`docker compose run webpack npm install`
+
 
 ## Additional Resources
 [Git Documentation](https://git-scm.com/doc)<br>
