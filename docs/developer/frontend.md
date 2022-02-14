@@ -11,6 +11,7 @@
 │       ├── assets/    # Frontend
 │       ├── components/    # Frontend
 │       ├── pages/    # Frontend
+│       ├── router/    # Frontend
 │       └── templates/    # Frontend
 │   ├── static/    # Frontend
 │       └── frontend/    # Frontend
@@ -65,6 +66,7 @@ The files that should be manipulated by developers are housed within the `src/` 
     - **assets/:** this is where we store all of our miscellaneous files, such as .jpegs, .svgs, .gifs, etc.
     - **componenents/:** this is where we store the files that generate our components, such as buttons and cards. To learn more about this in-depth, read the [components](#components-directory) section of this guide.
     - **pages/:** contains the React files that pools together various components to generate a page.
+    - **router/:** contains the routing logic for the project. It uses the [React-Router library](https://reactrouter.com/docs/en/v6).
     - **templates/:** contains html files that are then generated into the regular templates directory. To learn more about how Webpack bundle our files, read the [Webpack](#webpack-configurations) section of this guide.
     - **index.js:** this file serves as the entry point for all other js files\*. This file is read by Webpack, and then bundled into code in the `static` directory.
     - **index.scss:** this file serves as the entry point for all other scss files\*.
@@ -159,3 +161,4 @@ If you have explored documentation from Webpack, you might learn that the *babel
 [React Documentation](https://reactjs.org/docs/getting-started.html)<br>
 [Webpack Documentation](https://webpack.js.org/concepts/)<br>
 [@babel/preset-react Documentation](https://babeljs.io/docs/en/babel-preset-react)<br>
+[React Router Documentation](https://reactrouter.com/docs/en/v6)<br>
