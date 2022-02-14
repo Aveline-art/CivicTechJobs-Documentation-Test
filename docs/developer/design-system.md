@@ -6,7 +6,17 @@ This guide is the documentation for the CivicTechJobs Design System. Inside is n
 
 ### UI (User-Interface) Designers
 
-UI designers specialize in turning project requirements into a graphical interface that fits project requirements. Most UI designers are not coders. It is rare to find a designer with the knowledge and skills typical of a web developer.
+UI designers specialize in turning project requirements into a graphical interface that fits project requirements. That said designers are not coders.
+
+Some things that designers do not consider that developers do are:
+
+- The way components change as screen size changes
+- The ease of replicating components in code
+- The proper way to configure assets
+
+As a developer, we need to effectively communicate with designers at multiple stage of the Figma design process. This way, they can consciously encorporate decisions that consider developer needs.
+
+At other times, a developer is expected to work with 
 
 At CivicTechJobs, designers use two standard viewport size when creating our UIs, 1440px for desktop and 375px for mobile. This means that our product is made with a desktop and mobile first approach.
 
@@ -91,9 +101,11 @@ Our 12-column system can be used in conjunction with `.row` to further subdivide
 
 > "99% of the time, as screens shrinks, you want to reclaim space from paddings and margins."
 
-The spacing utilties are based upon a 0-5 range.
+The spacing utilties are based upon a 0-5 range, with an 8px difference between them.
 
 [insert table of values to translated px]
+
+Since these ranges are baked into our design system, when a component requires spacing, it is often optimal to use the most approximate spacing utilities rather than create custom spacing values.
 
 ### Responsive Mixins
 
