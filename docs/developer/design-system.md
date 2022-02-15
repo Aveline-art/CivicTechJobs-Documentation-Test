@@ -4,6 +4,8 @@ This guide is the documentation for the CivicTechJobs Design System (CTJ-DS). In
 
 ## Concepts
 
+To understand our Design System, here are some concepts explaining the decisions made when designing the DS.
+
 ### UI (User-Interface) Designers
 
 UI designers specialize in turning project requirements into a graphical interface that fits project requirements. That said designers are not coders.
@@ -44,8 +46,7 @@ Scalability and responsiveness are not mutually exclusive. A webpage can contain
 
 [insert gif of card which changes size at breakpoints that shows both]
 
-Only by combining both scalability and responsiveness in our design, can we create a high-quality website. When working with our design system, ask yourself, should this portion be scalable or responsive? If this portion is scalable, does it still work in mobile? Do I need a media query to develop for different viewports?
-
+Only by combining both scalability and responsiveness in our design, can we create a high-quality website. When working with the DS, ask yourself, should this portion be scalable or responsive? If this portion is scalable, does it still work in mobile? Do I need a media query to develop for different viewports?
 
 ### PropType as Documentation
 
@@ -55,7 +56,7 @@ By using PropTypes with our components, we have an easy way to look up hints on 
 
 [insert example with button]
 
-Because we are building our product with a component-first approach, it is important to be well-versed with our design system. In lieu of documentation, we do use PropTypes and cleanly written code to provide clues on how to use each component.
+Because we are building our product with a component-first approach, it is important to be well-versed with our DS. In lieu of documentation, we do use PropTypes and cleanly written code to provide clues on how to use each component.
 
 As an example,
 
@@ -63,9 +64,15 @@ As an example,
 
 ## Components
 
-While we can use CSS-only as our design system, using React components with SCSS vastly improve our ability to standardize our components beyond just styling. With components, we can add quick customizations through React props and standardize our components for accessibility. Because of these benefits, we use a component-first approach to developing web pages. Please componentize whenever you can and use them to build high-quality web pages!
+While we can use pure CSS as our styling sheet, using SCSS with React components vastly improve our ability to standardize our components beyond just styling. Components allows
 
-As a note, the design system is put together based on industry trends and practices. If you had ever explored Bootstrap, MUI, or Atlassian Design System, you will see many similiaries between their components and ours.
+- quick customizations through React props
+- standardizations to our components for accessibility
+- reusing the same component multiple times
+
+Because of these benefits, we use a component-first approach to developing web pages. Please componentize whenever you can and use them to build high-quality web pages!
+
+As a note, the DS is put together based on industry trends and practices. If you had ever explored Bootstrap, MUI, or Atlassian Design System, you will see many similiaries between their components and ours.
 
 ### Layout and Columns
 
@@ -119,7 +126,7 @@ The spacing utilties are based upon a 0-5 range, with an 8px difference between 
 
 [insert table of values to translated px]
 
-Because our design system is based on 12-columns, spacing utilities are made such that adding them on would not alter the 12-columns. For that very reason, it is optimal to use the spacing utilities whenever possible over custom spacing.
+Because our DS is based on 12-columns, spacing utilities are made such that adding them on would not alter the 12-columns. For that very reason, it is optimal to use the spacing utilities whenever possible over custom spacing.
 
 For example, if Figma indicates a 10px spacing, use either the 8px or 16px utility. Other times, Figma indicates a space far outside of our utility's range.
 
