@@ -65,6 +65,8 @@ As an example,
 
 While we can use CSS-only as our design system, using React components with SCSS vastly improve our ability to standardize our components beyond just styling. With components, we can add quick customizations through React props and standardize our components for accessibility. Because of these benefits, we use a component-first approach to developing web pages. Please componentize whenever you can and use them to build high-quality web pages!
 
+As a note, the design system is put together based on industry trends and practices. If you had ever explored Bootstrap, MUI, or Atlassian Design System, you will see many similiaries between their components and ours.
+
 ### Layout and Columns
 
 > "Using layout and column utilities automantically adds scalability to your pages."
@@ -164,3 +166,8 @@ When using our SVG assets make sure to use the best version for the job. In some
 In these cases, rather than calculating some difficult to maintain, complex spacing, simply request the design team to provide a better SVG, or edit the SVG, and send the updated version to the design team.
 
 ## Resources
+
+[Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/)
+[Atlassian Design System](https://atlassian.design/)
+[Bootstrap](https://getbootstrap.com/)
+[Material-UI](https://mui.com/)
