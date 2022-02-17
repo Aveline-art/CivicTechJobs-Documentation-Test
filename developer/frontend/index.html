@@ -51,6 +51,10 @@
 </li>
             
 <li>
+    <a href="../design-system/" class="dropdown-item">Design System Helper</a>
+</li>
+            
+<li>
     <a href="../development-culture/" class="dropdown-item">Development Culture</a>
 </li>
             
@@ -158,6 +162,7 @@
 │       ├── assets/    # Frontend
 │       ├── components/    # Frontend
 │       ├── pages/    # Frontend
+│       ├── router/    # Frontend
 │       └── templates/    # Frontend
 │   ├── static/    # Frontend
 │       └── frontend/    # Frontend
@@ -203,6 +208,7 @@
 <li><strong>assets/:</strong> this is where we store all of our miscellaneous files, such as .jpegs, .svgs, .gifs, etc.</li>
 <li><strong>componenents/:</strong> this is where we store the files that generate our components, such as buttons and cards. To learn more about this in-depth, read the <a href="#components-directory">components</a> section of this guide.</li>
 <li><strong>pages/:</strong> contains the React files that pools together various components to generate a page.</li>
+<li><strong>router/:</strong> contains the routing logic for the project. It uses the <a href="https://reactrouter.com/docs/en/v6">React-Router library</a>.</li>
 <li><strong>templates/:</strong> contains html files that are then generated into the regular templates directory. To learn more about how Webpack bundle our files, read the <a href="#webpack-configurations">Webpack</a> section of this guide.</li>
 <li><strong>index.js:</strong> this file serves as the entry point for all other js files*. This file is read by Webpack, and then bundled into code in the <code>static</code> directory.</li>
 <li><strong>index.scss:</strong> this file serves as the entry point for all other scss files*.</li>
@@ -285,7 +291,8 @@ module.exports = {
 <p><a href="https://sass-lang.com/documentation">Sass Documentation</a><br>
 <a href="https://reactjs.org/docs/getting-started.html">React Documentation</a><br>
 <a href="https://webpack.js.org/concepts/">Webpack Documentation</a><br>
-<a href="https://babeljs.io/docs/en/babel-preset-react">@babel/preset-react Documentation</a><br></p></div>
+<a href="https://babeljs.io/docs/en/babel-preset-react">@babel/preset-react Documentation</a><br>
+<a href="https://reactrouter.com/docs/en/v6">React Router Documentation</a><br></p></div>
             </div>
         </div>
 
