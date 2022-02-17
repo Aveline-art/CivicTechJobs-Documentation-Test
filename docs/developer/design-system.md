@@ -93,7 +93,7 @@ As a note, the DS is put together based on industry trends and practices. If you
 
 > "Using layout and column utilities automantically adds scalability to your pages."
 
-As with most design systems, we use a standard 12-column system to subdivide our layouts. Each column, without spacing, is worth *8.33% of its container's width\**.
+As with most design systems, we use a standard 12-column system to subdivide our layouts. Each column, without spacing, is worth *8.33% of its container's width\**. This means that columns are, by default, scalable.
 
 To use of our columns, first declare a parent container with the `.flex-container` class. Then use `col-*` classes in each children, replacing the `*` with the number for the column size.
 
@@ -173,26 +173,16 @@ Several of our components have `*-responsive` mixins at the end of the `.scss` f
 
 These mixins, as convention, always use max-width in its media query, so order matters! To use them properly, specify a default and declare screen size from largest to smallest:
 
-```SCSS
-.header-nav-menu {
-  @include col-size(7);
-  @include col-responsive("lgtablet", 8);
-  @include col-responsive("smtablet", 6);
-  @include col-responsive("mobile", 8);
-}
-```
+<iframe src="https://codesandbox.io/embed/responsive-mixins-c7269h?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fstyles.scss&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Responsive Mixins"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
 *<p style="text-align: center;">DO: specify a default on top and declare `*-responsive` mixins from large to small screen sizes.</p>*
 
-And do not use a smaller screen size above a larger one:
-
-```SCSS
-.header-nav-menu {
-  @include col-responsive("mobile", 8);
-  @include col-responsive("smtablet", 6);
-  @include col-responsive("lgtablet", 8);
-}
-```
-*<p style="text-align: center;">DON'T: declare `*-responsive` mixins without a top default or from small to large screen sizes.</p>*
+*<p style="text-align: center;">DON'T: declare `*-responsive` mixins without a default on top or from a smaller to larger screen size.</p>*
 
 ### SVGs as Components and as Data-URLs
 
