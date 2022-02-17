@@ -255,7 +255,7 @@ In this case, rather than calculating some difficult to maintain, complex spacin
 
 ## Resources
 
-[Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/)
-[Atlassian Design System](https://atlassian.design/)
-[Bootstrap](https://getbootstrap.com/)
-[Material-UI](https://mui.com/)
+[Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/)<br>
+[Atlassian Design System](https://atlassian.design/)<br>
+[Bootstrap](https://getbootstrap.com/)<br>
+[Material-UI](https://mui.com/)<br>
