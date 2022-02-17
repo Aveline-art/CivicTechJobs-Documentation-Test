@@ -20,7 +20,7 @@ Likewise, we must contend with the fact that Figma designs are static screens ti
 
 As a developer, we need to effectively communicate with designers at multiple stage of the Figma design process. This means understanding the intentions behind a design, and providing recommendations or alternatives that are simpler and easier for the developer to implement and maintain.
 
-At CivicTechJobs, designers use two standard viewport size when creating our UIs: 1440px for desktop and 375px for mobile. The appearance of the UI beyond these two sizes are to be determined how we, as developers, create and use our components.
+At CivicTechJobs, designers use two standard viewport size when creating our UIs: 1440px for desktop and 375px for mobile. The appearance of the UI beyond these two sizes are determined by us, as developers, as we componentize the Figma designs.
 
 ### Scalable and Responsive Components
 
@@ -30,7 +30,7 @@ A scalable component:
 
 - takes up a certain **fraction** of the total screensize regardless of screen size
 - shrinks and grows along with screen size
-- uses relative css sizing units
+- uses relative css sizing units, such as % or vm
 
 [show example of columns that are scalable]
 
@@ -38,11 +38,11 @@ A responsive component:
 
 - takes up an **absolute** amount of the screen regardless of screen size
 - remains static until reaching a certain breakpoint
-- uses static css sizing units
+- uses static css sizing units, such as px
 
 [show example of buttons that are reponsive]
 
-Scalability and responsiveness are not mutually exclusive. A webpage can contain components that are both scalable and responsive. As a matter of fact, a single component can be both responsive and scalable.
+Scalability and responsiveness are not mutually exclusive. A webpage can contain both scalable and responsive components. As a matter of fact, a single component can be both responsive and scalable.
 
 [insert gif of card which changes size at breakpoints that shows both]
 
