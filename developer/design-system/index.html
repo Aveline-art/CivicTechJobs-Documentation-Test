@@ -181,24 +181,24 @@
 <p>Because of these factors, the way a prototype is built on Figma does not necessarily translate 1:1 to how the designs should be build as code. For example, Figma designs could not indicate the use of SCSS mixins to abstract CSS code, nor the use of percentages as units of size.</p>
 <p>Likewise, we must contend with the fact that Figma designs are static screens tied to very specific viewport sizes. As developers we need to recreate both the fidelity and intentions of a design.</p>
 <p>As a developer, we need to effectively communicate with designers at multiple stage of the Figma design process. This means understanding the intentions behind a design, and providing recommendations or alternatives that are simpler and easier for the developer to implement and maintain.</p>
-<p>At CivicTechJobs, designers use two standard viewport size when creating our UIs: 1440px for desktop and 375px for mobile. The appearance of the UI beyond these two sizes are to be determined how we, as developers, create and use our components.</p>
+<p>At CivicTechJobs, designers use two standard viewport size when creating our UIs: 1440px for desktop and 375px for mobile. The appearance of the UI beyond these two sizes are determined by us, as developers, as we componentize the Figma designs.</p>
 <h3 id="scalable-and-responsive-components">Scalable and Responsive Components</h3>
 <p>When creating or using components, it is good to keep in mind the differences between a scalable component and responsive component.</p>
 <p>A scalable component:</p>
 <ul>
 <li>takes up a certain <strong>fraction</strong> of the total screensize regardless of screen size</li>
 <li>shrinks and grows along with screen size</li>
-<li>uses relative css sizing units</li>
+<li>uses relative css sizing units, such as % or vm</li>
 </ul>
-<p>[show example of columns that are scalable]</p>
+<p>[insert example of columns that are scalable]</p>
 <p>A responsive component:</p>
 <ul>
 <li>takes up an <strong>absolute</strong> amount of the screen regardless of screen size</li>
 <li>remains static until reaching a certain breakpoint</li>
-<li>uses static css sizing units</li>
+<li>uses static css sizing units, such as px</li>
 </ul>
-<p>[show example of buttons that are reponsive]</p>
-<p>Scalability and responsiveness are not mutually exclusive. A webpage can contain components that are both scalable and responsive. As a matter of fact, a single component can be both responsive and scalable.</p>
+<p>[insert example of buttons that are reponsive]</p>
+<p>Scalability and responsiveness are not mutually exclusive. A webpage can contain both scalable and responsive components. As a matter of fact, a single component can be both responsive and scalable.</p>
 <p>[insert gif of card which changes size at breakpoints that shows both]</p>
 <p>Only by combining both scalability and responsiveness in our design, can we create a high-quality website. When working with the DS, ask yourself, should this portion be scalable or responsive? If this portion is scalable, does it still work in mobile? Do I need a media query to develop for different viewports?</p>
 <h3 id="proptype-as-documentation">PropType as Documentation</h3>
@@ -237,40 +237,25 @@
 <blockquote>
 <p>"Using layout and column utilities automantically adds scalability to your pages."</p>
 </blockquote>
-<p>As with most design systems, we use a standard 12-column system to subdivide our layouts. Each column, without spacing, is worth <em>8.33% of its container's width*</em>.</p>
-<p>[show screenshot example of columns]</p>
-<p>As is also standard, in order to maintain the 12-column format, margins take away from the width rather than add onto it.</p>
-<p>[show gif of when spacing is added]</p>
-<p>To use of our columns, first declare a parent container with the <code>.flex-container</code> class. Then use <code>col-*</code> classes in each children. The <code>*</code> specifies a number. For example:</p>
-<pre><code class="language-HTML">&lt;div class=&quot;flex-container&quot;&gt;
-    &lt;div class=&quot;col-6&quot;&gt;6&lt;/div&gt;
-    &lt;div class=&quot;col-2&quot;&gt;2&lt;/div&gt;
-    &lt;div class=&quot;col-2&quot;&gt;2&lt;/div&gt;
-    &lt;div class=&quot;col-1&quot;&gt;1&lt;/div&gt;
-    &lt;div class=&quot;col-1&quot;&gt;1&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+<p>As with most design systems, we use a standard 12-column system to subdivide our layouts. Each column, without spacing, is worth <em>8.33% of its container's width*</em>. This means that columns are, by default, scalable.</p>
+<p>To use of our columns, first declare a parent container with the <code>.flex-container</code> class. Then use <code>col-*</code> classes in each children, replacing the <code>*</code> with the number for the column size.</p>
+<iframe src="https://codesandbox.io/embed/simple-layout-rwy8qh?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Simple Layout"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
 <p><em><p style="text-align: center;">We need to use a parent <code>.flex-container</code> with <code>col-*</code> classes to subdivide the UI.</p></em></p>
-<p>[shoow what happens when this code is rendered]</p>
 <p>Our 12-column system can be used in conjunction with <code>.row</code> and nested <code>.col-*</code> to further subdivide the UI, and create more complex layouts.</p>
-<pre><code class="language-HTML"> &lt;div class=&quot;flex-container mx-5&quot;&gt;
-        &lt;div class=&quot;col-3&quot;&gt;
-          &lt;div class=&quot;row&quot;&gt;
-            1
-          &lt;/div&gt;
-          &lt;div class=&quot;row&quot;&gt;
-            2
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;col-9 row&quot;&gt;
-          &lt;div class=&quot;col-3&quot;&gt;3&lt;/div&gt;
-          &lt;div class=&quot;col-6&quot;&gt;4&lt;/div&gt;
-          &lt;div class=&quot;col-3&quot;&gt;5&lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-</code></pre>
+<iframe src="https://codesandbox.io/embed/complex-layout-d38x2c?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Complex Layout"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
 <p><em><p style="text-align: center;">With <code>.flex-container</code>, <code>.row</code>, and <code>.col-*</code>, we can create complex layouts that fit our purposes.</p></em></p>
-<p>[shoow what happens when this code is rendered]</p>
 <blockquote>
 <h6 id="note-although-figma-uses-12-col-to-subdivide-the-entire-screen-our-column-classes-subdivides-the-container-this-means-that-we-can-make-the-divide-the-whole-into-columns-and-then-divide-each-column-even-further-to-achieve-our-desired-ratios"><em>*Note: Although Figma uses 12-col to subdivide the entire screen, our column classes subdivides the </em><em>container</em><em>. This means that we can make the divide the whole into columns, and then divide each column even further to achieve our desired ratios.</em></h6>
 </blockquote>
@@ -379,32 +364,31 @@
 </table>
 <p><em><p style="text-align: center;">Tables showing the different way we classifies our spacing utilities. As an example, <code>.px-4</code> sets the left and right padding as 32px.</p></em></p>
 <p>Because our DS is based on 12-columns, spacing utilities are made such that adding them on would not alter the 12-columns. For that reason, it is optimal to use the spacing utilities whenever possible over setting margins or padding.</p>
-<p>As an example, if Figma indicates a 10px left margin, use either <code>.ml-1</code> or <code>.ml-2</code>.</p>
-<p>Other times, Figma designs shows spacing that falls outside of our size range.</p>
-<p>[show example of large range]</p>
-<p>In this scenario, rather than set a specific margin, try to use layout utilities and center alignments to achieve an approximation of the design. This has the benefit of ensuring scalability and reducing the maintainence cost of the resulting code.</p>
+<iframe src="https://codesandbox.io/embed/spacing-utilities-i32zeg?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Spacing Utilities"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+<p><em><p style="text-align: center;">Add margins responsibly. Try to use the spacing utilities over creating custom margin classes.</p></em></p>
+<p>As an example, if Figma indicates a 10px left margin, use either <code>.ml-1</code> or <code>.ml-2</code>. Other times, however, Figma designs shows spacing that falls outside of our size range. In this scenario, rather than set a specific margin, try to use centering instead, as large spaces are usually not a result of spacing, but of centering.</p>
+<p>By being smart about our centering, we ensure scalability and reduce the maintainence cost of our code.</p>
 <h3 id="responsive-mixins">Responsive Mixins</h3>
 <blockquote>
 <p>"When using responsive mixins, order matters! Always declare them from big to small."</p>
 </blockquote>
 <p>Several of our components have <code>*-responsive</code> mixins at the end of the <code>.scss</code> file. These are there as helpers to quickly create responsiveness into our components, keeping our code nice to read.</p>
 <p>These mixins, as convention, always use max-width in its media query, so order matters! To use them properly, specify a default and declare screen size from largest to smallest:</p>
-<pre><code class="language-SCSS">.header-nav-menu {
-  @include col-size(7);
-  @include col-responsive(&quot;lgtablet&quot;, 8);
-  @include col-responsive(&quot;smtablet&quot;, 6);
-  @include col-responsive(&quot;mobile&quot;, 8);
-}
-</code></pre>
+<iframe src="https://codesandbox.io/embed/responsive-mixins-c7269h?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fstyles.scss&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Responsive Mixins"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
 <p><em><p style="text-align: center;">DO: specify a default on top and declare <code>*-responsive</code> mixins from large to small screen sizes.</p></em></p>
-<p>And do not use a smaller screen size above a larger one:</p>
-<pre><code class="language-SCSS">.header-nav-menu {
-  @include col-responsive(&quot;mobile&quot;, 8);
-  @include col-responsive(&quot;smtablet&quot;, 6);
-  @include col-responsive(&quot;lgtablet&quot;, 8);
-}
-</code></pre>
-<p><em><p style="text-align: center;">DON'T: declare <code>*-responsive</code> mixins without a top default or from small to large screen sizes.</p></em></p>
+<p><em><p style="text-align: center;">DON'T: declare <code>*-responsive</code> mixins without a default on top or from a smaller to larger screen size.</p></em></p>
 <h3 id="svgs-as-components-and-as-data-urls">SVGs as Components and as Data-URLs</h3>
 <p>SVG assets are read into our codebase as React components or data-urls.</p>
 <p>SVG components:</p>
@@ -441,10 +425,10 @@ import copIconUiux from &quot;./svgs/cop-icon-uiux.svg?url&quot;;
 <p>[insert example of svg with extra spaces]</p>
 <p>In this case, rather than calculating some difficult to maintain, complex spacing, simply request the design team to provide a better SVG or edit the SVG and inform the design team.</p>
 <h2 id="resources">Resources</h2>
-<p><a href="https://bradfrost.com/blog/post/atomic-web-design/">Atomic Design</a>
-<a href="https://atlassian.design/">Atlassian Design System</a>
-<a href="https://getbootstrap.com/">Bootstrap</a>
-<a href="https://mui.com/">Material-UI</a></p></div>
+<p><a href="https://bradfrost.com/blog/post/atomic-web-design/">Atomic Design</a><br>
+<a href="https://atlassian.design/">Atlassian Design System</a><br>
+<a href="https://getbootstrap.com/">Bootstrap</a><br>
+<a href="https://mui.com/">Material-UI</a><br></p></div>
             </div>
         </div>
 
