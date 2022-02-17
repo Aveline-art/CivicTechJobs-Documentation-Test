@@ -32,7 +32,7 @@ A scalable component:
 - shrinks and grows along with screen size
 - uses relative css sizing units, such as % or vm
 
-[show example of columns that are scalable]
+[insert example of columns that are scalable]
 
 A responsive component:
 
@@ -40,7 +40,7 @@ A responsive component:
 - remains static until reaching a certain breakpoint
 - uses static css sizing units, such as px
 
-[show example of buttons that are reponsive]
+[insert example of buttons that are reponsive]
 
 Scalability and responsiveness are not mutually exclusive. A webpage can contain both scalable and responsive components. As a matter of fact, a single component can be both responsive and scalable.
 
@@ -95,49 +95,27 @@ As a note, the DS is put together based on industry trends and practices. If you
 
 As with most design systems, we use a standard 12-column system to subdivide our layouts. Each column, without spacing, is worth *8.33% of its container's width\**.
 
-[show screenshot example of columns]
+To use of our columns, first declare a parent container with the `.flex-container` class. Then use `col-*` classes in each children, replacing the `*` with the number for the column size.
 
-As is also standard, in order to maintain the 12-column format, margins take away from the width rather than add onto it.
+<iframe src="https://codesandbox.io/embed/simple-layout-rwy8qh?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Simple Layout"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
 
-[show gif of when spacing is added]
-
-To use of our columns, first declare a parent container with the `.flex-container` class. Then use `col-*` classes in each children. The `*` specifies a number. For example:
-
-```HTML
-<div class="flex-container">
-    <div class="col-6">6</div>
-    <div class="col-2">2</div>
-    <div class="col-2">2</div>
-    <div class="col-1">1</div>
-    <div class="col-1">1</div>
-</div>
-```
 *<p style="text-align: center;">We need to use a parent `.flex-container` with `col-*` classes to subdivide the UI.</p>*
-
-[shoow what happens when this code is rendered]
 
 Our 12-column system can be used in conjunction with `.row` and nested `.col-*` to further subdivide the UI, and create more complex layouts.
 
-```HTML
- <div class="flex-container mx-5">
-        <div class="col-3">
-          <div class="row">
-            1
-          </div>
-          <div class="row">
-            2
-          </div>
-        </div>
-        <div class="col-9 row">
-          <div class="col-3">3</div>
-          <div class="col-6">4</div>
-          <div class="col-3">5</div>
-        </div>
-      </div>
-```
-*<p style="text-align: center;">With `.flex-container`, `.row`, and `.col-*`, we can create complex layouts that fit our purposes.</p>*
+<iframe src="https://codesandbox.io/embed/complex-layout-d38x2c?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Complex Layout"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
 
-[shoow what happens when this code is rendered]
+*<p style="text-align: center;">With `.flex-container`, `.row`, and `.col-*`, we can create complex layouts that fit our purposes.</p>*
 
 > ###### *\*Note: Although Figma uses 12-col to subdivide the entire screen, our column classes subdivides the **container**. This means that we can make the divide the whole into columns, and then divide each column even further to achieve our desired ratios.*
 
@@ -174,13 +152,18 @@ The spacing utilties are classified by attributes, based on direction, and size,
 
 Because our DS is based on 12-columns, spacing utilities are made such that adding them on would not alter the 12-columns. For that reason, it is optimal to use the spacing utilities whenever possible over setting margins or padding.
 
-As an example, if Figma indicates a 10px left margin, use either `.ml-1` or `.ml-2`.
+<iframe src="https://codesandbox.io/embed/spacing-utilities-i32zeg?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Spacing Utilities"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
 
-Other times, Figma designs shows spacing that falls outside of our size range.
+*<p style="text-align: center;">Add margins responsibly. Try to use the spacing utilities over creating custom margin classes.</p>*
 
-[show example of large range]
+As an example, if Figma indicates a 10px left margin, use either `.ml-1` or `.ml-2`. Other times, however, Figma designs shows spacing that falls outside of our size range. In this scenario, rather than set a specific margin, try to use centering instead, as large spaces are usually not a result of spacing, but of centering.
 
-In this scenario, rather than set a specific margin, try to use layout utilities and center alignments to achieve an approximation of the design. This has the benefit of ensuring scalability and reducing the maintainence cost of the resulting code.
+By being smart about our centering, we ensure scalability and reduce the maintainence cost of our code.
 
 ### Responsive Mixins
 
