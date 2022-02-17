@@ -149,15 +149,15 @@ The spacing utilties are classified by attributes, based on direction, and size,
 
 **Table of Spacing Attributes**
 
-| Spacing attributes (margins) | Meaning | Spacing attributes (padding) | Meaning |
-| ----------- | ----------- | ----------- | ----------- |
-| m | all margins | p | all paddings |
-| mt | margin-top | pt | padding-top |
-| mr | margin-right | pr | padding-right |
-| mb | margin-bottom | pb | padding-bottom |
-| ml | margin-left | pl | padding-left |
-| mx | margin-left and -right | px | padding-left and -right |
-| my | margin-top and -bottom | py | padding-top and -bottom |
+| Spacing attribute (margins) | Meaning | \| | Spacing attribute (padding) | Meaning |
+| :-----------: | :----------- | :-----------: | :-----------: |  :----------- |
+| m | all margins | **\|** | p | all paddings |
+| mt | margin-top | **\|** | pt | padding-top |
+| mr | margin-right | **\|** | pr | padding-right |
+| mb | margin-bottom | **\|** | pb | padding-bottom |
+| ml | margin-left | **\|** | pl | padding-left |
+| mx | margin-left and -right | **\|** | px | padding-left and -right |
+| my | margin-top and -bottom | **\|** | py | padding-top and -bottom |
 
 **Table of Spacing Sizes**
 
