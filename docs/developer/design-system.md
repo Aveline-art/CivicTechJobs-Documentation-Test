@@ -4,21 +4,21 @@ This guide is the developer documentation for the CivicTechJobs Design System (C
 
 ## Concepts
 
-To understand our Design System, here are some overarching concepts to keep in mind when working with the DS.
+To understand our Design System, these are some overarching concepts to keep in mind when working with the DS.
 
 ### Implementing from Figma to Frontend Development
 
-UI designers specialize in turning project requirements into a graphical interface that fits project requirements. Designers, however, are not coders. As a result, here are some development-related aspects of componentization that designers do not consider:
+UI designers specialize in turning project requirements into graphical interfaces that fits project requirements. Designers, however, are not coders. As a result, here are some development-related aspects of componentization that designers do not consider:
 
 - the way components change as screen size changes
 - the ease of replicating components in code
 - the proper way to configure svg assets for development
 
-Because of these factors, the way a prototype is built on Figma does not necessarily translate 1:1 to how the designs should be build as code. For example, Figma designs could not indicate the use of SCSS mixins to abstract CSS code, nor the use of percentages as units of size.
+Because of these factors, the way a prototype is built on Figma does not necessarily translate 1:1 to how the designs should be build as code. For example, Figma designs does not use SCSS mixins to simplify code or percentages as units of size.
 
-Likewise, we must contend with the fact that Figma designs are static screens tied to very specific viewport sizes. As developers we need to recreate both the fidelity and intentions of a design.
+Likewise, we must contend with the fact that Figma designs are static screens tied to very specific viewport sizes. As developers we need to recreate the Figma designs while also considering the intent behind a design.
 
-As a developer, we need to effectively communicate with designers at multiple stage of the Figma design process. This means understanding the intentions behind a design, and providing recommendations or alternatives that are simpler and easier for the developer to implement and maintain.
+As a developer, we need to effectively communicate with designers at multiple stage of the Figma design process. This means providing recommendations or alternatives that are simpler and easier for the developer to implement and maintain.
 
 At CivicTechJobs, designers use two standard viewport size when creating our UIs: 1440px for desktop and 375px for mobile. The appearance of the UI beyond these two sizes are determined by us, as developers, as we componentize the Figma designs.
 
@@ -28,7 +28,7 @@ When creating or using components, it is good to keep in mind the differences be
 
 A scalable component:
 
-- takes up a certain **fraction** of the total screensize regardless of screen size
+- takes up a certain **fraction** of the total screensize
 - shrinks and grows along with screen size
 - uses relative css sizing units, such as % or vm
 
@@ -36,7 +36,7 @@ A scalable component:
 
 A responsive component:
 
-- takes up an **absolute** amount of the screen regardless of screen size
+- takes up an **absolute** amount of the screen
 - remains static until reaching a certain breakpoint
 - uses static css sizing units, such as px
 
@@ -52,7 +52,7 @@ Only by combining both scalability and responsiveness in our design, can we crea
 
 As a small project, React [recommends](https://reactjs.org/docs/static-type-checking.html) the use of [PropTypes](https://reactjs.org/docs/typechecking-with-proptypes.html) as our type checking library.
 
-By using PropTypes with our components, we have an easy way to look up hints on how to use our components.
+By using PropTypes, we have an easy way to look up hints on how to use our components.
 
 ```Javascript
 Button.propTypes = {
@@ -72,22 +72,22 @@ Button.propTypes = {
   ]),
 };
 ```
-*<p style="text-align: center;">For this <Button\> component, PropTypes provide clues on props to pass in. As can be surmised, a small, long button would be declared as <Button size="sm" length="long"\> </p>*
+*<p style="text-align: center;">For this <Button\> component, PropTypes provide clues on the component's props. From these hints, a developer can guess that a small, long button would be declared as <Button size="sm" length="long"\> </p>*
 
-Since comprehensive documentation is difficult to maintain, we rely on PropTypes and cleanly written code to provide clues on how to use each component. We recommend new developers take time to play with the components in [`components/`](https://github.com/hackforla/CivicTechJobs/tree/main/frontend/src/components).
+Because comprehensive documentation is difficult for a small team to maintain, we rely on PropTypes and cleanly written code to provide clues on how to use each component. We recommend new developers take time to play with the components in [`components/`](https://github.com/hackforla/CivicTechJobs/tree/main/frontend/src/components) to fully understand how to utilize them.
 
 ## Components
 
-While we can use pure CSS as our styling sheet, using SCSS with React components vastly improve our ability to standardize our components beyond just styling. Componentization allows:
+While we can use pure CSS as our styling sheet, using SCSS with React components allows us to standardize our components in a powerful way. Componentization allows:
 
 - quick customizations through React props
 - standardizations to our components for accessibility
 - reuse of the same component across multiple pages
-- updating designs by simply readjusting the base component
+- updating designs by simply editting the base component
 
 Because of these benefits, we use a component-first approach to developing web pages. Please componentize as much as possible and use them to build high-quality web pages!
 
-As a note, the DS is put together based on industry trends and practices. If you had ever explored Bootstrap, MUI, or Atlassian Design System, you will see many similiaries between their components and ours.
+As a note, the DS is put together based on industry trends and practices. If you have ever explored Bootstrap, MUI, or Atlassian Design System, you will see many similiaries between their components and ours.
 
 ### Layout and Columns
 
@@ -95,7 +95,7 @@ As a note, the DS is put together based on industry trends and practices. If you
 
 As with most design systems, we use a standard 12-column system to subdivide our layouts. Each column, without spacing, is worth *8.33% of its container's width\**. This means that columns are, by default, scalable.
 
-To use of our columns, first declare a parent container with the `.flex-container` class. Then use `col-*` classes in each children, replacing the `*` with the number for the column size.
+To use of our column classes, first declare a parent container with the `.flex-container` class. Then use `col-*` classes in each children, replacing the `*` with the number for the column size.
 
 <iframe src="https://codesandbox.io/embed/simple-layout-rwy8qh?fontsize=14&hidenavigation=1&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -117,13 +117,13 @@ Our 12-column system can be used in conjunction with `.row` and nested `.col-*` 
 
 *<p style="text-align: center;">With `.flex-container`, `.row`, and `.col-*`, we can create complex layouts that fit our purposes.</p>*
 
-> ###### *\*Note: Although Figma uses 12-col to subdivide the entire screen, our column classes subdivides the **container**. This means that we can make the divide the whole into columns, and then divide each column even further to achieve our desired ratios.*
+> ###### *\*Note: Although Figma uses 12 columns to subdivide the entire screen, our column classes subdivides the **container**. This means that we can divide the whole screen into columns, and then divide each column even further to achieve our desired ratios.*
 
 ### Smart Spacing
 
-> "99% of the time, as screens shrinks, you want to reclaim space from paddings and margins."
+> "99% of the time, you'll want to reclaim space from paddings and margins as screen size shrinks."
 
-The spacing utilties are classified by attributes, based on direction, and size, based on a 0-5 range.
+The spacing utilties are classified by attributes and size.
 
 **Table of Spacing Attributes**
 
@@ -150,7 +150,7 @@ The spacing utilties are classified by attributes, based on direction, and size,
 
 *<p style="text-align: center;">Tables showing the different way we classifies our spacing utilities. As an example, `.px-4` sets the left and right padding as 32px.</p>*
 
-Because our DS is based on 12-columns, spacing utilities are made such that adding them on would not alter the 12-columns. For that reason, it is optimal to use the spacing utilities whenever possible over setting margins or padding.
+Because our DS is based on a 12-column system, spacing utilities are made such that adding them on would not alter the 12-column system. For that reason, it is optimal to use the spacing utilities whenever possible over setting custom margins or padding.
 
 <iframe src="https://codesandbox.io/embed/spacing-utilities-i32zeg?fontsize=14&hidenavigation=1&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -161,17 +161,17 @@ Because our DS is based on 12-columns, spacing utilities are made such that addi
 
 *<p style="text-align: center;">Add margins responsibly. Try to use the spacing utilities over creating custom margin classes.</p>*
 
-As an example, if Figma indicates a 10px left margin, use either `.ml-1` or `.ml-2`. Other times, however, Figma designs shows spacing that falls outside of our size range. In this scenario, rather than set a specific margin, try to use centering instead, as large spaces are usually not a result of spacing, but of centering.
+As an example, if Figma indicates a 10px left margin, use either `.ml-1` or `.ml-2`. Other times, however, Figma designs show spacing that falls outside of our size range. In this scenario, rather than set a specific margin, try to use centering instead, as large spaces are usually not a result of spacing, but of centering.
 
-By being smart about our centering, we ensure scalability and reduce the maintainence cost of our code.
+By being smart about the way we include spacing, we ensure scalability and reduce the maintainence cost of our code.
 
 ### Responsive Mixins
 
 > "When using responsive mixins, order matters! Always declare them from big to small."
 
-Several of our components have `*-responsive` mixins at the end of the `.scss` file. These are there as helpers to quickly create responsiveness into our components, keeping our code nice to read.
+Several of our components have `*-responsive` mixins at the end of the `.scss` file. These act as helpers to quickly create responsiveness into our components, keeping our code simple to understand.
 
-These mixins, as convention, always use max-width in its media query, so order matters! To use them properly, specify a default and declare screen size from largest to smallest:
+These mixins always use max-width in its media query (as we use a desktop-first approach), so order matters! To use them properly, specify a default and declare screen size from largest to smallest:
 
 <iframe src="https://codesandbox.io/embed/responsive-mixins-c7269h?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fstyles.scss&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -188,21 +188,23 @@ These mixins, as convention, always use max-width in its media query, so order m
 
 SVG assets are read into our codebase as React components or data-urls.
 
-SVG components:
+As React components:
 
-- allows the use of React props to dynamically alter the component on response
+- specified with a starting uppercase
+- allows the use of React props to dynamically alter the component
 - requires editing stroke and fill values to inherit to allow passing in props
 - requires a wrapper element to add additional styling
 - are imported directly from the image file
-- specified with a starting uppercase
+- difficult to work with by provide lots of customization
 
-Data-urls:
+As Data-urls:
 
+- specified with a starting lowercase
 - are used as the src in `img` tags
 - difficult to dynamically change
-- easy to use if usage is only size dependent
+- simple to declare and use
 - are imported with `?url` qualifiers
-- specified with a starting lowercase
+- not customizable beyond width and height
 
 ```Javascript
 // COP Icons
@@ -218,13 +220,13 @@ import copIconOps from "./svgs/cop-icon-ops.svg?url";
 import copIconProduct from "./svgs/cop-icon-product.svg?url";
 import copIconUiux from "./svgs/cop-icon-uiux.svg?url";
 ```
-*<p style="text-align: center;">The top icons are imported from the image file as SVG components. The respective bottom icons are imported as data-urls.</p>*
+*<p style="text-align: center;">The top icons are imported from the image file as SVG components. The bottom icons are the same file imported as data-urls.</p>*
 
 When using our SVG assets make sure to use the best import for the job. In some cases, however, neither of these images are optimal to use. For example an SVG might have extra space that makes it hard to center.
 
 [insert example of svg with extra spaces]
 
-In this case, rather than calculating some difficult to maintain, complex spacing, simply request the design team to provide a better SVG or edit the SVG and inform the design team.
+In this case, rather than calculating some difficult to maintain, complex spacing, simply request the design team to provide a better SVG or edit the SVG yourself and send a copy to the design team.
 
 ## Resources
 
@@ -232,3 +234,7 @@ In this case, rather than calculating some difficult to maintain, complex spacin
 [Atlassian Design System](https://atlassian.design/)<br>
 [Bootstrap](https://getbootstrap.com/)<br>
 [Material-UI](https://mui.com/)<br>
+
+*Note: If embeds are out-of-date, and you have no access to the originals, please fork and replace them through CodeSandbox!*
+
+[CodeSandbox](https://codesandbox.io/)<br>
