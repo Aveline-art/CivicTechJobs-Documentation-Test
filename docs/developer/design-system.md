@@ -32,7 +32,9 @@ A scalable component:
 - shrinks and grows along with screen size
 - uses relative css sizing units, such as % or vm
 
-[insert example of columns that are scalable]
+<img src="../../assets/scalable.gif" width="100%" />
+
+*<p style="text-align: center;">These columns show scalable behavior. The columns smoothly shrink and grow with the screen size.</p>*
 
 A responsive component:
 
@@ -40,11 +42,15 @@ A responsive component:
 - remains static until reaching a certain breakpoint
 - uses static css sizing units, such as px
 
-[insert example of buttons that are reponsive]
+<img src="../../assets/responsive.gif" width="100%" />
+
+*<p style="text-align: center;">These buttons show responsive behavior. The buttons do not change until the screen reaches a certain screen size.</p>*
 
 Scalability and responsiveness are not mutually exclusive. A webpage can contain both scalable and responsive components. As a matter of fact, a single component can be both responsive and scalable.
 
-[insert gif of card which changes size at breakpoints that shows both]
+<img src="../../assets/scale-and-response.gif" width="100%" />
+
+*<p style="text-align: center;">This card shows both scalable and responsive behavior. The width smoothly change with the screen size, but drastically change at a certain screen size.</p>*
 
 Only by combining both scalability and responsiveness in our design, can we create a high-quality website. When working with the DS, ask yourself, should this portion be scalable or responsive? If this portion is scalable, does it still work in mobile? Do I need a media query to develop for different viewports?
 
@@ -222,9 +228,10 @@ import copIconUiux from "./svgs/cop-icon-uiux.svg?url";
 ```
 *<p style="text-align: center;">The top icons are imported from the image file as SVG components. The bottom icons are the same file imported as data-urls.</p>*
 
-When using our SVG assets make sure to use the best import for the job. In some cases, however, neither of these images are optimal to use. For example an SVG might have extra space that makes it hard to center.
+When using our SVG assets make sure to use the best import for the job. In some cases, however, neither of these imports are optimal to use. For example the SVG itself might be incorrectly formatted.
 
-[insert example of svg with extra spaces]
+<img src="../../assets/logo-horizontal.svg" width="600" />
+*<p style="text-align: center;">This SVG contains extra spaces, especially on the bottom. This image is impossible to center correctly without adding unnecessary margins.</p>*
 
 In this case, rather than calculating some difficult to maintain, complex spacing, simply request the design team to provide a better SVG or edit the SVG yourself and send a copy to the design team.
 
