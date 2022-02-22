@@ -231,6 +231,7 @@ import copIconUiux from "./svgs/cop-icon-uiux.svg?url";
 When using our SVG assets make sure to use the best import for the job. In some cases, however, neither of these imports are optimal to use. For example the SVG itself might be incorrectly formatted.
 
 <img src="../../assets/logo-horizontal.svg" width="600" />
+
 *<p style="text-align: center;">This SVG contains extra spaces, especially on the bottom. This image is impossible to center correctly without adding unnecessary margins.</p>*
 
 In this case, rather than calculating some difficult to maintain, complex spacing, simply request the design team to provide a better SVG or edit the SVG yourself and send a copy to the design team.
