@@ -28,7 +28,7 @@ When creating or using components, it is good to keep in mind the differences be
 
 A scalable component:
 
-- takes up a certain **fraction** of the total screensize
+- takes up a certain **fraction** of the total screen size
 - shrinks and grows along with screen size
 - uses relative css sizing units, such as % or vm
 
@@ -89,15 +89,15 @@ While we can use pure CSS as our styling sheet, using SCSS with React components
 - quick customizations through React props
 - standardizations to our components for accessibility
 - reuse of the same component across multiple pages
-- updating designs by simply editting the base component
+- updating designs by simply editing the base component
 
 Because of these benefits, we use a component-first approach to developing web pages. Please componentize as much as possible and use them to build high-quality web pages!
 
-As a note, the DS is put together based on industry trends and practices. If you have ever explored Bootstrap, MUI, or Atlassian Design System, you will see many similiaries between their components and ours.
+As a note, the DS is put together based on industry trends and practices. If you have ever explored Bootstrap, MUI, or Atlassian Design System, you will see many similarities between their components and ours.
 
 ### Layout and Columns
 
-> "Using layout and column utilities automantically adds scalability to your pages."
+> "Using layout and column utilities automatically adds scalability to your pages."
 
 As with most design systems, we use a standard 12-column system to subdivide our layouts. Each column, without spacing, is worth *8.33% of its container's width\**. This means that columns are, by default, scalable.
 
@@ -127,9 +127,9 @@ Our 12-column system can be used in conjunction with `.row` and nested `.col-*` 
 
 ### Smart Spacing
 
-> "99% of the time, you'll want to reclaim space from paddings and margins as screen size shrinks."
+> "99% of the time, you'll want to reclaim space from padding and margins as screen size shrinks."
 
-The spacing utilties are classified by attributes and size.
+The spacing utilities are classified by attributes and size.
 
 **Table of Spacing Attributes**
 
@@ -169,7 +169,7 @@ Because our DS is based on a 12-column system, spacing utilities are made such t
 
 As an example, if Figma indicates a 10px left margin, use either `.ml-1` or `.ml-2`. Other times, however, Figma designs show spacing that falls outside of our size range. In this scenario, rather than set a specific margin, try to use centering instead, as large spaces are usually not a result of spacing, but of centering.
 
-By being smart about the way we include spacing, we ensure scalability and reduce the maintainence cost of our code.
+By being smart about the way we include spacing, we ensure scalability and reduce the maintenance cost of our code.
 
 ### Responsive Mixins
 
