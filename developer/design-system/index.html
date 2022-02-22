@@ -186,7 +186,7 @@
 <p>When creating or using components, it is good to keep in mind the differences between a scalable component and responsive component.</p>
 <p>A scalable component:</p>
 <ul>
-<li>takes up a certain <strong>fraction</strong> of the total screensize</li>
+<li>takes up a certain <strong>fraction</strong> of the total screen size</li>
 <li>shrinks and grows along with screen size</li>
 <li>uses relative css sizing units, such as % or vm</li>
 </ul>
@@ -232,13 +232,13 @@
 <li>quick customizations through React props</li>
 <li>standardizations to our components for accessibility</li>
 <li>reuse of the same component across multiple pages</li>
-<li>updating designs by simply editting the base component</li>
+<li>updating designs by simply editing the base component</li>
 </ul>
 <p>Because of these benefits, we use a component-first approach to developing web pages. Please componentize as much as possible and use them to build high-quality web pages!</p>
-<p>As a note, the DS is put together based on industry trends and practices. If you have ever explored Bootstrap, MUI, or Atlassian Design System, you will see many similiaries between their components and ours.</p>
+<p>As a note, the DS is put together based on industry trends and practices. If you have ever explored Bootstrap, MUI, or Atlassian Design System, you will see many similarities between their components and ours.</p>
 <h3 id="layout-and-columns">Layout and Columns</h3>
 <blockquote>
-<p>"Using layout and column utilities automantically adds scalability to your pages."</p>
+<p>"Using layout and column utilities automatically adds scalability to your pages."</p>
 </blockquote>
 <p>As with most design systems, we use a standard 12-column system to subdivide our layouts. Each column, without spacing, is worth <em>8.33% of its container's width*</em>. This means that columns are, by default, scalable.</p>
 <p>To use of our column classes, first declare a parent container with the <code>.flex-container</code> class. Then use <code>col-*</code> classes in each children, replacing the <code>*</code> with the number for the column size.</p>
@@ -264,9 +264,9 @@
 </blockquote>
 <h3 id="smart-spacing">Smart Spacing</h3>
 <blockquote>
-<p>"99% of the time, you'll want to reclaim space from paddings and margins as screen size shrinks."</p>
+<p>"99% of the time, you'll want to reclaim space from padding and margins as screen size shrinks."</p>
 </blockquote>
-<p>The spacing utilties are classified by attributes and size.</p>
+<p>The spacing utilities are classified by attributes and size.</p>
 <p><strong>Table of Spacing Attributes</strong></p>
 <table>
 <thead>
@@ -376,7 +376,7 @@
 
 <p><em><p style="text-align: center;">Add margins responsibly. Try to use the spacing utilities over creating custom margin classes.</p></em></p>
 <p>As an example, if Figma indicates a 10px left margin, use either <code>.ml-1</code> or <code>.ml-2</code>. Other times, however, Figma designs show spacing that falls outside of our size range. In this scenario, rather than set a specific margin, try to use centering instead, as large spaces are usually not a result of spacing, but of centering.</p>
-<p>By being smart about the way we include spacing, we ensure scalability and reduce the maintainence cost of our code.</p>
+<p>By being smart about the way we include spacing, we ensure scalability and reduce the maintenance cost of our code.</p>
 <h3 id="responsive-mixins">Responsive Mixins</h3>
 <blockquote>
 <p>"When using responsive mixins, order matters! Always declare them from big to small."</p>
@@ -427,8 +427,8 @@ import copIconUiux from &quot;./svgs/cop-icon-uiux.svg?url&quot;;
 </code></pre>
 <p><em><p style="text-align: center;">The top icons are imported from the image file as SVG components. The bottom icons are the same file imported as data-urls.</p></em></p>
 <p>When using our SVG assets make sure to use the best import for the job. In some cases, however, neither of these imports are optimal to use. For example the SVG itself might be incorrectly formatted.</p>
-<p><img src="../../assets/logo-horizontal.svg" width="600" />
-<em><p style="text-align: center;">This SVG contains extra spaces, especially on the bottom. This image is impossible to center correctly without adding unnecessary margins.</p></em></p>
+<p><img src="../../assets/logo-horizontal.svg" width="600" /></p>
+<p><em><p style="text-align: center;">This SVG contains extra spaces, especially on the bottom. This image is impossible to center correctly without adding unnecessary margins.</p></em></p>
 <p>In this case, rather than calculating some difficult to maintain, complex spacing, simply request the design team to provide a better SVG or edit the SVG yourself and send a copy to the design team.</p>
 <h2 id="resources">Resources</h2>
 <p><a href="https://bradfrost.com/blog/post/atomic-web-design/">Atomic Design</a><br>
