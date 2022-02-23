@@ -44,34 +44,15 @@ A responsive component:
 
 <img src="../../assets/responsive.gif" width="100%" />
 
-*<p style="text-align: center;">These buttons show responsive behavior. The buttons do not change until the screen reaches a certain screen size.</p>*
+*<p style="text-align: center;">These buttons show responsive behavior. The buttons do not change until the screen reaches a certain breakpoint.</p>*
 
 Scalability and responsiveness are not mutually exclusive. A webpage can contain both scalable and responsive components. As a matter of fact, a single component can be both responsive and scalable.
 
 <img src="../../assets/scale-and-response.gif" width="100%" />
 
-*<p style="text-align: center;">This card shows both scalable and responsive behavior. The width smoothly change with the screen size, but drastically change at a certain screen size.</p>*
+*<p style="text-align: center;">This card shows both scalable and responsive behavior. The width smoothly change with the screen size, but drastically changes at our max small tablet breakpoint.</p>*
 
-Only by combining both scalability and responsiveness in our design, can we create a high-quality website. When translating from Figma to code, most of the time, the work is in deciding what part of the Figma design should scale, and what part should be responsive. Here are some rules of thumbs (**note**: not hard rules!) for components that should be scalable vs responsive:
-
-Scalable:
-
-- Columns
-- Any empty space
-- Anything involving max-width, max-height, or percentage units
-
-Responsive:
-
-- Any text, such as titles and paragraphs
-- Buttons
-- Margins
-- Padding
-- Any class that uses breakpoint-*
-
-Both:
-
-- Logos
-- Cards
+Only by combining both scalability and responsiveness in our design, can we create a high-quality website. When translating from Figma to code, most of the time, the work is in deciding what part of the Figma design should scale, and what part should be responsive. As a rule of thumb, when designing the transition from the desktop to mobile Figma, scale down empty space and margins, and responsively shrink buttons and text.
 
 ### PropType as Documentation
 
@@ -113,6 +94,39 @@ While we can use pure CSS as our styling sheet, using SCSS with React components
 Because of these benefits, we use a component-first approach to developing web pages. Please componentize as much as possible and use them to build high-quality web pages!
 
 As a note, the DS is put together based on industry trends and practices. If you have ever explored Bootstrap, MUI, or Atlassian Design System, you will see many similarities between their components and ours.
+
+
+### Mixins and Classes
+
+> "Use classes in HTML but mixins in SCSS."
+
+Most of our styles have a class and mixin equivalent. The class, for the most part, is created from just declaring the mixin inside the class.
+
+```SCSS
+@mixin hidden {
+  display: none;
+}
+
+.hidden {
+  @include hidden;
+}
+```
+*<p style="text-align: center;">Above is the hidden mixin definition. Below is the hidden mixin declaration as part of the .hidden class.</p>*
+
+These are both provided to suit different use cases. For example, the class version is best suited for declaring inside of React components or HTML elements as part of the `addClass` prop or `className` attribute. On the other hand, the mixin version is best used when adding it to your own custom style, such as with media queries.
+
+```SCSS
+.my-own-custom-class {
+  @include breakpoint-media-max("smtablet") {
+    @include hidden; // Do this
+    @extend .hidden; // Do not do this, will break
+
+    @include col-size(6); // Do this
+    @extend .col-6; // Do not do this, will break
+  }
+}
+```
+*<p style="text-align: center;">Please use the mixin version when you want your own custom style to inherit from an existing style!</p>*
 
 ### Layout and Columns
 
@@ -254,6 +268,34 @@ When using our SVG assets make sure to use the best import for the job. In some 
 *<p style="text-align: center;">This SVG contains extra spaces, especially on the bottom. This image is impossible to center correctly without adding unnecessary margins.</p>*
 
 In this case, rather than calculating some difficult to maintain, complex spacing, simply request the design team to provide a better SVG or edit the SVG yourself and send a copy to the design team.
+
+## Troubleshooting Errors
+
+##### You may not @extend selectors across media queries.
+
+This happens when @extend is used inside of media queries. An example using our DS,
+
+```SCSS
+.header-logo-desktop {
+  @include breakpoint-media-max("smtablet") {
+    @extend .hidden;
+  }
+}
+```
+*<p style="text-align: center;">Using @extend inside of a media query will result in an error. Instead, use a mixin declaration with @include instead. Most classes in the DS include an equivalent mixin for this specific purpose.</p>*
+
+```SCSS
+.header-logo-desktop {
+  @include breakpoint-media-max("smtablet") {
+    @include hidden;
+  }
+}
+```
+*<p style="text-align: center;">This works because it declares a mixin rather than extend the class!</p>*
+
+To avoid these errors, it is encouraged to use the mixin rather than the class version of a specific style for inheritance whenever possible!
+
+For more information visit [this documentation](https://sass-lang.com/documentation/at-rules/extend#extend-in-media) and this [StackOverflow question](https://stackoverflow.com/a/14841491).
 
 ## Resources
 
