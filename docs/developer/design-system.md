@@ -128,6 +128,7 @@ These are both provided to suit different use cases. For example, the class vers
 ```
 *<p style="text-align: center;">Please use the mixin version when you want your own custom style to inherit from an existing style!</p>*
 
+
 ### Layout and Columns
 
 > "Using layout and column utilities automatically adds scalability to your pages."
