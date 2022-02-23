@@ -52,7 +52,26 @@ Scalability and responsiveness are not mutually exclusive. A webpage can contain
 
 *<p style="text-align: center;">This card shows both scalable and responsive behavior. The width smoothly change with the screen size, but drastically change at a certain screen size.</p>*
 
-Only by combining both scalability and responsiveness in our design, can we create a high-quality website. When working with the DS, ask yourself, should this portion be scalable or responsive? If this portion is scalable, does it still work in mobile? Do I need a media query to develop for different viewports?
+Only by combining both scalability and responsiveness in our design, can we create a high-quality website. When translating from Figma to code, most of the time, the work is in deciding what part of the Figma design should scale, and what part should be responsive. Here are some rules of thumbs (**note**: not hard rules!) for components that should be scalable vs responsive:
+
+Scalable:
+
+- Columns
+- Any empty space
+- Anything involving max-width, max-height, or percentage units
+
+Responsive:
+
+- Any text, such as titles and paragraphs
+- Buttons
+- Margins
+- Padding
+- Any class that uses breakpoint-*
+
+Both:
+
+- Logos
+- Cards
 
 ### PropType as Documentation
 
@@ -127,7 +146,7 @@ Our 12-column system can be used in conjunction with `.row` and nested `.col-*` 
 
 ### Smart Spacing
 
-> "99% of the time, you'll want to reclaim space from padding and margins as screen size shrinks."
+> "99% of the time, you'll want to reclaim space from padding, margins, or empty space as screen size shrinks."
 
 The spacing utilities are classified by attributes and size.
 
@@ -226,7 +245,7 @@ import copIconOps from "./svgs/cop-icon-ops.svg?url";
 import copIconProduct from "./svgs/cop-icon-product.svg?url";
 import copIconUiux from "./svgs/cop-icon-uiux.svg?url";
 ```
-*<p style="text-align: center;">The top icons are imported from the image file as SVG components. The bottom icons are the same file imported as data-urls.</p>*
+*<p style="text-align: center;">The top icons are imported from the image file as SVG components. The bottom icons are the same file imported as data-urls. Notice how the latter import file adds "?url".</p>*
 
 When using our SVG assets make sure to use the best import for the job. In some cases, however, neither of these imports are optimal to use. For example the SVG itself might be incorrectly formatted.
 
