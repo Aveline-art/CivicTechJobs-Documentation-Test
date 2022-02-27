@@ -211,7 +211,7 @@ By being smart about the way we include spacing, we ensure scalability and reduc
 
 Several of our components have `*-responsive` mixins at the end of the `.scss` file. These act as helpers to quickly create responsiveness into our components, keeping our code simple to understand.
 
-These mixins always use max-width in its media query (as we use a desktop-first approach), so order matters! To use them properly, specify a default and declare screen size from largest to smallest:
+These mixins always use max-width in its media query (as we use a desktop-first approach), so order matters! To use them properly, specify a default* and declare screen size from largest to smallest:
 
 <iframe src="https://codesandbox.io/embed/responsive-mixins-c7269h?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fstyles.scss&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -223,6 +223,9 @@ These mixins always use max-width in its media query (as we use a desktop-first 
 *<p style="text-align: center;">DO: specify a default on top and declare `*-responsive` mixins from large to small screen sizes.</p>*
 
 *<p style="text-align: center;">DON'T: declare `*-responsive` mixins without a default on top or from a smaller to larger screen size.</p>*
+
+
+> ###### *\*Note: There is one caveat to that as some components come with its own default. For example, buttons take a size prop, in which you declare a default already. Therefore when using the responsive mixin for button size, there is no need to put a default on top in the scss code.*
 
 ### SVGs as Components and as Data-URLs
 
