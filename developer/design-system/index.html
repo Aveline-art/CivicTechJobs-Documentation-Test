@@ -416,7 +416,7 @@
 <p>"When using responsive mixins, order matters! Always declare them from big to small."</p>
 </blockquote>
 <p>Several of our components have <code>*-responsive</code> mixins at the end of the <code>.scss</code> file. These act as helpers to quickly create responsiveness into our components, keeping our code simple to understand.</p>
-<p>These mixins always use max-width in its media query (as we use a desktop-first approach), so order matters! To use them properly, specify a default and declare screen size from largest to smallest:</p>
+<p>These mixins always use max-width in its media query (as we use a desktop-first approach), so order matters! To use them properly, specify a default* and declare screen size from largest to smallest:</p>
 <iframe src="https://codesandbox.io/embed/responsive-mixins-c7269h?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fstyles.scss&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
      title="Responsive Mixins"
@@ -426,6 +426,9 @@
 
 <p><em><p style="text-align: center;">DO: specify a default on top and declare <code>*-responsive</code> mixins from large to small screen sizes.</p></em></p>
 <p><em><p style="text-align: center;">DON'T: declare <code>*-responsive</code> mixins without a default on top or from a smaller to larger screen size.</p></em></p>
+<blockquote>
+<h6 id="note-there-is-one-caveat-to-that-as-some-components-come-with-their-own-default-for-example-buttons-take-a-size-prop-in-which-you-declare-a-default-already-therefore-when-using-the-responsive-mixin-for-button-size-there-is-no-need-to-declare-a-top-level-default-in-the-scss-code"><em>*Note: There is one caveat to that as some components come with their own default. For example, buttons take a size prop, in which you declare a default already. Therefore when using the responsive mixin for button size, there is no need to declare a top level default in the scss code.</em></h6>
+</blockquote>
 <h3 id="svgs-as-components-and-as-data-urls">SVGs as Components and as Data-URLs</h3>
 <p>SVG assets are read into our codebase as React components or data-urls.</p>
 <p>As React components:</p>
