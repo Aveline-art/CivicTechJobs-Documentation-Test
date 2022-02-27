@@ -225,7 +225,7 @@ These mixins always use max-width in its media query (as we use a desktop-first 
 *<p style="text-align: center;">DON'T: declare `*-responsive` mixins without a default on top or from a smaller to larger screen size.</p>*
 
 
-> ###### *\*Note: There is one caveat to that as some components come with its own default. For example, buttons take a size prop, in which you declare a default already. Therefore when using the responsive mixin for button size, there is no need to put a default on top in the scss code.*
+> ###### *\*Note: There is one caveat to that as some components come with their own default. For example, buttons take a size prop, in which you declare a default already. Therefore when using the responsive mixin for button size, there is no need to declare a top level default in the scss code.*
 
 ### SVGs as Components and as Data-URLs
 
