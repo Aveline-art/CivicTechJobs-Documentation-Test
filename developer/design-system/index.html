@@ -189,7 +189,7 @@
 <p>Because of these factors, the way a prototype is built on Figma does not necessarily translate 1:1 to how the designs should be build as code. For example, Figma designs does not use SCSS mixins to simplify code or percentages as units of size.</p>
 <p>Likewise, we must contend with the fact that Figma designs are static screens tied to very specific viewport sizes. As developers we need to recreate the Figma designs while also considering the intent behind a design.</p>
 <p>As a developer, we need to effectively communicate with designers at multiple stage of the Figma design process. This means providing recommendations or alternatives that are simpler and easier for the developer to implement and maintain.</p>
-<p>At CivicTechJobs, designers use two standard viewport size when creating our UIs: 1440px for desktop and 375px for mobile. The appearance of the UI beyond these two sizes are determined by us, as developers, as we componentize the Figma designs.</p>
+<p>At CivicTechJobs, designers use two standard viewport widths when creating our UIs: 1440px for desktop and 375px for mobile. The appearance of the UI beyond these two sizes are determined by us, as developers, as we componentize the Figma designs. Do note though that the smallest, popular, mobile screen width is 320px, which is the miminum when designing the UI.</p>
 <h3 id="scalable-and-responsive-components">Scalable and Responsive Components</h3>
 <p>When creating or using components, it is good to keep in mind the differences between a scalable component and responsive component.</p>
 <p>A scalable component:</p>
@@ -274,7 +274,7 @@
 <blockquote>
 <p>"Using layout and column utilities automatically adds scalability to your pages."</p>
 </blockquote>
-<p>As with most design systems, we use a standard 12-column system to subdivide our layouts. Each column, without spacing, is worth <em>8.33% of its container's width*</em>. This means that columns are, by default, scalable.</p>
+<p>As with most design systems, we use a standard 12-column system to subdivide our layouts. Each column, without spacing, is worth *8.33% of its container's width**. This means that columns are, by default, scalable.</p>
 <p>To use of our column classes, first declare a parent container with the <code>.flex-container</code> class. Then use <code>col-*</code> classes in each children, replacing the <code>*</code> with the number for the column size.</p>
 <iframe src="https://codesandbox.io/embed/simple-layout-rwy8qh?fontsize=14&hidenavigation=1&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -283,7 +283,7 @@
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-<p><em><p style="text-align: center;">We need to use a parent <code>.flex-container</code> with <code>col-*</code> classes to subdivide the UI.</p></em></p>
+<p>_<p style="text-align: center;">We need to use a parent <code>.flex-container</code> with <code>col-_</code> classes to subdivide the UI.</p>*</p>
 <p>Our 12-column system can be used in conjunction with <code>.row</code> and nested <code>.col-*</code> to further subdivide the UI, and create more complex layouts.</p>
 <iframe src="https://codesandbox.io/embed/complex-layout-d38x2c?fontsize=14&hidenavigation=1&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -292,9 +292,9 @@
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-<p><em><p style="text-align: center;">With <code>.flex-container</code>, <code>.row</code>, and <code>.col-*</code>, we can create complex layouts that fit our purposes.</p></em></p>
+<p>_<p style="text-align: center;">With <code>.flex-container</code>, <code>.row</code>, and <code>.col-_</code>, we can create complex layouts that fit our purposes.</p>*</p>
 <blockquote>
-<h6 id="note-although-figma-uses-12-columns-to-subdivide-the-entire-screen-our-column-classes-subdivides-the-container-this-means-that-we-can-divide-the-whole-screen-into-columns-and-then-divide-each-column-even-further-to-achieve-our-desired-ratios"><em>*Note: Although Figma uses 12 columns to subdivide the entire screen, our column classes subdivides the </em><em>container</em><em>. This means that we can divide the whole screen into columns, and then divide each column even further to achieve our desired ratios.</em></h6>
+<h6 id="note-although-figma-uses-12-columns-to-subdivide-the-entire-screen-our-column-classes-subdivides-the-container-this-means-that-we-can-divide-the-whole-screen-into-columns-and-then-divide-each-column-even-further-to-achieve-our-desired-ratios"><em>*Note: Although Figma uses 12 columns to subdivide the entire screen, our column classes subdivides the <strong>container</strong>. This means that we can divide the whole screen into columns, and then divide each column even further to achieve our desired ratios.</em></h6>
 </blockquote>
 <h3 id="smart-spacing">Smart Spacing</h3>
 <blockquote>
@@ -424,8 +424,8 @@
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-<p><em><p style="text-align: center;">DO: specify a default on top and declare <code>*-responsive</code> mixins from large to small screen sizes.</p></em></p>
-<p><em><p style="text-align: center;">DON'T: declare <code>*-responsive</code> mixins without a default on top or from a smaller to larger screen size.</p></em></p>
+<p>_<p style="text-align: center;">DO: specify a default on top and declare <code>_-responsive</code> mixins from large to small screen sizes.</p>*</p>
+<p>_<p style="text-align: center;">DON'T: declare <code>_-responsive</code> mixins without a default on top or from a smaller to larger screen size.</p>*</p>
 <blockquote>
 <h6 id="note-there-is-one-caveat-to-that-as-some-components-come-with-their-own-default-for-example-buttons-take-a-size-prop-in-which-you-declare-a-default-already-therefore-when-using-the-responsive-mixin-for-button-size-there-is-no-need-to-declare-a-top-level-default-in-the-scss-code"><em>*Note: There is one caveat to that as some components come with their own default. For example, buttons take a size prop, in which you declare a default already. Therefore when using the responsive mixin for button size, there is no need to declare a top level default in the scss code.</em></h6>
 </blockquote>
