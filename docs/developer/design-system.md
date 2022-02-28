@@ -20,7 +20,7 @@ Likewise, we must contend with the fact that Figma designs are static screens ti
 
 As a developer, we need to effectively communicate with designers at multiple stage of the Figma design process. This means providing recommendations or alternatives that are simpler and easier for the developer to implement and maintain.
 
-At CivicTechJobs, designers use two standard viewport size when creating our UIs: 1440px for desktop and 375px for mobile. The appearance of the UI beyond these two sizes are determined by us, as developers, as we componentize the Figma designs.
+At CivicTechJobs, designers use two standard viewport widths when creating our UIs: 1440px for desktop and 375px for mobile. The appearance of the UI beyond these two sizes are determined by us, as developers, as we componentize the Figma designs. Do note though that the smallest, popular, mobile screen width is 320px, which is the miminum when designing the UI.
 
 ### Scalable and Responsive Components
 
@@ -34,7 +34,7 @@ A scalable component:
 
 <img src="../../assets/scalable.gif" width="100%" />
 
-*<p style="text-align: center;">These columns show scalable behavior. The columns smoothly shrink and grow with the screen size.</p>*
+_<p style="text-align: center;">These columns show scalable behavior. The columns smoothly shrink and grow with the screen size.</p>_
 
 A responsive component:
 
@@ -44,13 +44,13 @@ A responsive component:
 
 <img src="../../assets/responsive.gif" width="100%" />
 
-*<p style="text-align: center;">These buttons show responsive behavior. The buttons do not change until the screen reaches a certain breakpoint.</p>*
+_<p style="text-align: center;">These buttons show responsive behavior. The buttons do not change until the screen reaches a certain breakpoint.</p>_
 
 Scalability and responsiveness are not mutually exclusive. A webpage can contain both scalable and responsive components. As a matter of fact, a single component can be both responsive and scalable.
 
 <img src="../../assets/scale-and-response.gif" width="100%" />
 
-*<p style="text-align: center;">This card shows both scalable and responsive behavior. The width smoothly change with the screen size, but drastically changes at our max small tablet breakpoint.</p>*
+_<p style="text-align: center;">This card shows both scalable and responsive behavior. The width smoothly change with the screen size, but drastically changes at our max small tablet breakpoint.</p>_
 
 Only by combining both scalability and responsiveness in our design, can we create a high-quality website. When translating from Figma to code, most of the time, the work is in deciding what part of the Figma design should scale, and what part should be responsive. As a rule of thumb, when designing the transition from the desktop to mobile Figma, scale down empty space and margins, and responsively shrink buttons and text.
 
@@ -78,7 +78,8 @@ Button.propTypes = {
   ]),
 };
 ```
-*<p style="text-align: center;">For this <Button\> component, PropTypes provide clues on the component's props. From these hints, a developer can guess that a small, long button would be declared as <Button size="sm" length="long"\> </p>*
+
+_<p style="text-align: center;">For this <Button\> component, PropTypes provide clues on the component's props. From these hints, a developer can guess that a small, long button would be declared as <Button size="sm" length="long"\> </p>_
 
 Because comprehensive documentation is difficult for a small team to maintain, we rely on PropTypes and cleanly written code to provide clues on how to use each component. We recommend new developers take time to play with the components in [`components/`](https://github.com/hackforla/CivicTechJobs/tree/main/frontend/src/components) to fully understand how to utilize them.
 
@@ -95,7 +96,6 @@ Because of these benefits, we use a component-first approach to developing web p
 
 As a note, the DS is put together based on industry trends and practices. If you have ever explored Bootstrap, MUI, or Atlassian Design System, you will see many similarities between their components and ours.
 
-
 ### Mixins and Classes
 
 > "Use classes in HTML but mixins in SCSS."
@@ -111,7 +111,8 @@ Most of our styles have a class and mixin equivalent. The class, for the most pa
   @include hidden;
 }
 ```
-*<p style="text-align: center;">Above is the hidden mixin definition. Below is the hidden mixin declaration as part of the .hidden class.</p>*
+
+_<p style="text-align: center;">Above is the hidden mixin definition. Below is the hidden mixin declaration as part of the .hidden class.</p>_
 
 These are both provided to suit different use cases. For example, the class version is best suited for declaring inside of React components or HTML elements as part of the `addClass` prop or `className` attribute. On the other hand, the mixin version is best used when adding it to your own custom style, such as with media queries.
 
@@ -126,14 +127,14 @@ These are both provided to suit different use cases. For example, the class vers
   }
 }
 ```
-*<p style="text-align: center;">Please use the mixin version when you want your own custom style to inherit from an existing style!</p>*
 
+_<p style="text-align: center;">Please use the mixin version when you want your own custom style to inherit from an existing style!</p>_
 
 ### Layout and Columns
 
 > "Using layout and column utilities automatically adds scalability to your pages."
 
-As with most design systems, we use a standard 12-column system to subdivide our layouts. Each column, without spacing, is worth *8.33% of its container's width\**. This means that columns are, by default, scalable.
+As with most design systems, we use a standard 12-column system to subdivide our layouts. Each column, without spacing, is worth \*8.33% of its container's width\*\*. This means that columns are, by default, scalable.
 
 To use of our column classes, first declare a parent container with the `.flex-container` class. Then use `col-*` classes in each children, replacing the `*` with the number for the column size.
 
@@ -144,7 +145,7 @@ To use of our column classes, first declare a parent container with the `.flex-c
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-*<p style="text-align: center;">We need to use a parent `.flex-container` with `col-*` classes to subdivide the UI.</p>*
+_<p style="text-align: center;">We need to use a parent `.flex-container` with `col-_` classes to subdivide the UI.</p>\*
 
 Our 12-column system can be used in conjunction with `.row` and nested `.col-*` to further subdivide the UI, and create more complex layouts.
 
@@ -155,9 +156,9 @@ Our 12-column system can be used in conjunction with `.row` and nested `.col-*` 
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-*<p style="text-align: center;">With `.flex-container`, `.row`, and `.col-*`, we can create complex layouts that fit our purposes.</p>*
+_<p style="text-align: center;">With `.flex-container`, `.row`, and `.col-_`, we can create complex layouts that fit our purposes.</p>\*
 
-> ###### *\*Note: Although Figma uses 12 columns to subdivide the entire screen, our column classes subdivides the **container**. This means that we can divide the whole screen into columns, and then divide each column even further to achieve our desired ratios.*
+> ###### _\*Note: Although Figma uses 12 columns to subdivide the entire screen, our column classes subdivides the **container**. This means that we can divide the whole screen into columns, and then divide each column even further to achieve our desired ratios._
 
 ### Smart Spacing
 
@@ -167,28 +168,28 @@ The spacing utilities are classified by attributes and size.
 
 **Table of Spacing Attributes**
 
-| Spacing attribute (margins) | Meaning | \| | Spacing attribute (padding) | Meaning |
-| :-----------: | :----------- | :-----------: | :-----------: |  :----------- |
-| m | all margins | **\|** | p | all paddings |
-| mt | margin-top | **\|** | pt | padding-top |
-| mr | margin-right | **\|** | pr | padding-right |
-| mb | margin-bottom | **\|** | pb | padding-bottom |
-| ml | margin-left | **\|** | pl | padding-left |
-| mx | margin-left and -right | **\|** | px | padding-left and -right |
-| my | margin-top and -bottom | **\|** | py | padding-top and -bottom |
+| Spacing attribute (margins) | Meaning                |   \|   | Spacing attribute (padding) | Meaning                 |
+| :-------------------------: | :--------------------- | :----: | :-------------------------: | :---------------------- |
+|              m              | all margins            | **\|** |              p              | all paddings            |
+|             mt              | margin-top             | **\|** |             pt              | padding-top             |
+|             mr              | margin-right           | **\|** |             pr              | padding-right           |
+|             mb              | margin-bottom          | **\|** |             pb              | padding-bottom          |
+|             ml              | margin-left            | **\|** |             pl              | padding-left            |
+|             mx              | margin-left and -right | **\|** |             px              | padding-left and -right |
+|             my              | margin-top and -bottom | **\|** |             py              | padding-top and -bottom |
 
 **Table of Spacing Sizes**
 
 | Spacing size | Actual size (px) |
-| ----------- | ----------- |
-| 0 | 0px |
-| 1 | 8px |
-| 2 | 16px |
-| 3 | 24px |
-| 4 | 32px |
-| 5 | 40px |
+| ------------ | ---------------- |
+| 0            | 0px              |
+| 1            | 8px              |
+| 2            | 16px             |
+| 3            | 24px             |
+| 4            | 32px             |
+| 5            | 40px             |
 
-*<p style="text-align: center;">Tables showing the different way we classifies our spacing utilities. As an example, `.px-4` sets the left and right padding as 32px.</p>*
+_<p style="text-align: center;">Tables showing the different way we classifies our spacing utilities. As an example, `.px-4` sets the left and right padding as 32px.</p>_
 
 Because our DS is based on a 12-column system, spacing utilities are made such that adding them on would not alter the 12-column system. For that reason, it is optimal to use the spacing utilities whenever possible over setting custom margins or padding.
 
@@ -199,7 +200,7 @@ Because our DS is based on a 12-column system, spacing utilities are made such t
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-*<p style="text-align: center;">Add margins responsibly. Try to use the spacing utilities over creating custom margin classes.</p>*
+_<p style="text-align: center;">Add margins responsibly. Try to use the spacing utilities over creating custom margin classes.</p>_
 
 As an example, if Figma indicates a 10px left margin, use either `.ml-1` or `.ml-2`. Other times, however, Figma designs show spacing that falls outside of our size range. In this scenario, rather than set a specific margin, try to use centering instead, as large spaces are usually not a result of spacing, but of centering.
 
@@ -211,7 +212,7 @@ By being smart about the way we include spacing, we ensure scalability and reduc
 
 Several of our components have `*-responsive` mixins at the end of the `.scss` file. These act as helpers to quickly create responsiveness into our components, keeping our code simple to understand.
 
-These mixins always use max-width in its media query (as we use a desktop-first approach), so order matters! To use them properly, specify a default* and declare screen size from largest to smallest:
+These mixins always use max-width in its media query (as we use a desktop-first approach), so order matters! To use them properly, specify a default\* and declare screen size from largest to smallest:
 
 <iframe src="https://codesandbox.io/embed/responsive-mixins-c7269h?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fstyles.scss&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -220,12 +221,11 @@ These mixins always use max-width in its media query (as we use a desktop-first 
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-*<p style="text-align: center;">DO: specify a default on top and declare `*-responsive` mixins from large to small screen sizes.</p>*
+_<p style="text-align: center;">DO: specify a default on top and declare `_-responsive` mixins from large to small screen sizes.</p>\*
 
-*<p style="text-align: center;">DON'T: declare `*-responsive` mixins without a default on top or from a smaller to larger screen size.</p>*
+_<p style="text-align: center;">DON'T: declare `_-responsive` mixins without a default on top or from a smaller to larger screen size.</p>\*
 
-
-> ###### *\*Note: There is one caveat to that as some components come with their own default. For example, buttons take a size prop, in which you declare a default already. Therefore when using the responsive mixin for button size, there is no need to declare a top level default in the scss code.*
+> ###### _\*Note: There is one caveat to that as some components come with their own default. For example, buttons take a size prop, in which you declare a default already. Therefore when using the responsive mixin for button size, there is no need to declare a top level default in the scss code._
 
 ### SVGs as Components and as Data-URLs
 
@@ -263,13 +263,14 @@ import copIconOps from "./svgs/cop-icon-ops.svg?url";
 import copIconProduct from "./svgs/cop-icon-product.svg?url";
 import copIconUiux from "./svgs/cop-icon-uiux.svg?url";
 ```
-*<p style="text-align: center;">The top icons are imported from the image file as SVG components. The bottom icons are the same file imported as data-urls. Notice how the latter import file adds "?url".</p>*
+
+_<p style="text-align: center;">The top icons are imported from the image file as SVG components. The bottom icons are the same file imported as data-urls. Notice how the latter import file adds "?url".</p>_
 
 When using our SVG assets make sure to use the best import for the job. In some cases, however, neither of these imports are optimal to use. For example the SVG itself might be incorrectly formatted.
 
 <img src="../../assets/logo-horizontal.svg" width="600" />
 
-*<p style="text-align: center;">This SVG contains extra spaces, especially on the bottom. This image is impossible to center correctly without adding unnecessary margins.</p>*
+_<p style="text-align: center;">This SVG contains extra spaces, especially on the bottom. This image is impossible to center correctly without adding unnecessary margins.</p>_
 
 In this case, rather than calculating some difficult to maintain, complex spacing, simply request the design team to provide a better SVG or edit the SVG yourself and send a copy to the design team.
 
@@ -286,7 +287,8 @@ This happens when @extend is used inside of media queries. An example using our 
   }
 }
 ```
-*<p style="text-align: center;">Using @extend inside of a media query will result in an error. Instead, use a mixin declaration with @include instead. Most classes in the DS include an equivalent mixin for this specific purpose.</p>*
+
+_<p style="text-align: center;">Using @extend inside of a media query will result in an error. Instead, use a mixin declaration with @include instead. Most classes in the DS include an equivalent mixin for this specific purpose.</p>_
 
 ```SCSS
 .header-logo-desktop {
@@ -295,7 +297,8 @@ This happens when @extend is used inside of media queries. An example using our 
   }
 }
 ```
-*<p style="text-align: center;">This works because it declares a mixin rather than extend the class!</p>*
+
+_<p style="text-align: center;">This works because it declares a mixin rather than extend the class!</p>_
 
 To avoid these errors, it is encouraged to use the mixin rather than the class version of a specific style for inheritance whenever possible!
 
@@ -308,6 +311,6 @@ For more information visit [this documentation](https://sass-lang.com/documentat
 [Bootstrap](https://getbootstrap.com/)<br>
 [Material-UI](https://mui.com/)<br>
 
-*Note: If embeds are out-of-date, and you have no access to the originals, please fork and replace them through CodeSandbox!*
+_Note: If embeds are out-of-date, and you have no access to the originals, please fork and replace them through CodeSandbox!_
 
 [CodeSandbox](https://codesandbox.io/)<br>
