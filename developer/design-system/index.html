@@ -283,7 +283,7 @@
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-<p>_<p style="text-align: center;">We need to use a parent <code>.flex-container</code> with <code>col-_</code> classes to subdivide the UI.</p>*</p>
+<p><em><p style="text-align: center;">We need to use a parent <code>.flex-container</code> with <code>col-*</code> classes to subdivide the UI.</p></em></p>
 <p>Our 12-column system can be used in conjunction with <code>.row</code> and nested <code>.col-*</code> to further subdivide the UI, and create more complex layouts.</p>
 <iframe src="https://codesandbox.io/embed/complex-layout-d38x2c?fontsize=14&hidenavigation=1&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -292,7 +292,7 @@
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-<p>_<p style="text-align: center;">With <code>.flex-container</code>, <code>.row</code>, and <code>.col-_</code>, we can create complex layouts that fit our purposes.</p>*</p>
+<p><em><p style="text-align: center;">With <code>.flex-container</code>, <code>.row</code>, and <code>.col-*</code>, we can create complex layouts that fit our purposes.</p></em></p>
 <blockquote>
 <h6 id="note-although-figma-uses-12-columns-to-subdivide-the-entire-screen-our-column-classes-subdivides-the-container-this-means-that-we-can-divide-the-whole-screen-into-columns-and-then-divide-each-column-even-further-to-achieve-our-desired-ratios"><em>*Note: Although Figma uses 12 columns to subdivide the entire screen, our column classes subdivides the <strong>container</strong>. This means that we can divide the whole screen into columns, and then divide each column even further to achieve our desired ratios.</em></h6>
 </blockquote>
@@ -424,8 +424,8 @@
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-<p>_<p style="text-align: center;">DO: specify a default on top and declare <code>_-responsive</code> mixins from large to small screen sizes.</p>*</p>
-<p>_<p style="text-align: center;">DON'T: declare <code>_-responsive</code> mixins without a default on top or from a smaller to larger screen size.</p>*</p>
+<p><em><p style="text-align: center;">DO: specify a default on top and declare <code>*-responsive</code> mixins from large to small screen sizes.</p></em></p>
+<p><em><p style="text-align: center;">DON'T: declare <code>*-responsive</code> mixins without a default on top or from a smaller to larger screen size.</p></em></p>
 <blockquote>
 <h6 id="note-there-is-one-caveat-to-that-as-some-components-come-with-their-own-default-for-example-buttons-take-a-size-prop-in-which-you-declare-a-default-already-therefore-when-using-the-responsive-mixin-for-button-size-there-is-no-need-to-declare-a-top-level-default-in-the-scss-code"><em>*Note: There is one caveat to that as some components come with their own default. For example, buttons take a size prop, in which you declare a default already. Therefore when using the responsive mixin for button size, there is no need to declare a top level default in the scss code.</em></h6>
 </blockquote>
@@ -443,7 +443,7 @@
 <p>As Data-urls:</p>
 <ul>
 <li>specified with a starting lowercase</li>
-<li>are used as the src in <code>img</code> tags</li>
+<li>are used as the src in <code>img</code> tags, to allow quick width/length adjustments</li>
 <li>difficult to dynamically change</li>
 <li>simple to declare and use</li>
 <li>are imported with <code>?url</code> qualifiers</li>
