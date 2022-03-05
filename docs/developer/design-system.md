@@ -145,7 +145,7 @@ To use of our column classes, first declare a parent container with the `.flex-c
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-_<p style="text-align: center;">We need to use a parent `.flex-container` with `col-_` classes to subdivide the UI.</p>\*
+_<p style="text-align: center;">We need to use a parent `.flex-container` with `col-*` classes to subdivide the UI.</p>_
 
 Our 12-column system can be used in conjunction with `.row` and nested `.col-*` to further subdivide the UI, and create more complex layouts.
 
@@ -156,7 +156,7 @@ Our 12-column system can be used in conjunction with `.row` and nested `.col-*` 
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-_<p style="text-align: center;">With `.flex-container`, `.row`, and `.col-_`, we can create complex layouts that fit our purposes.</p>\*
+_<p style="text-align: center;">With `.flex-container`, `.row`, and `.col-*`, we can create complex layouts that fit our purposes.</p>_
 
 > ###### _\*Note: Although Figma uses 12 columns to subdivide the entire screen, our column classes subdivides the **container**. This means that we can divide the whole screen into columns, and then divide each column even further to achieve our desired ratios._
 
@@ -221,9 +221,9 @@ These mixins always use max-width in its media query (as we use a desktop-first 
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-_<p style="text-align: center;">DO: specify a default on top and declare `_-responsive` mixins from large to small screen sizes.</p>\*
+_<p style="text-align: center;">DO: specify a default on top and declare `*-responsive` mixins from large to small screen sizes.</p>_
 
-_<p style="text-align: center;">DON'T: declare `_-responsive` mixins without a default on top or from a smaller to larger screen size.</p>\*
+_<p style="text-align: center;">DON'T: declare `*-responsive` mixins without a default on top or from a smaller to larger screen size.</p>_
 
 > ###### _\*Note: There is one caveat to that as some components come with their own default. For example, buttons take a size prop, in which you declare a default already. Therefore when using the responsive mixin for button size, there is no need to declare a top level default in the scss code._
 
@@ -243,7 +243,7 @@ As React components:
 As Data-urls:
 
 - specified with a starting lowercase
-- are used as the src in `img` tags
+- are used as the src in `img` tags, to allow quick width/length adjustments
 - difficult to dynamically change
 - simple to declare and use
 - are imported with `?url` qualifiers
